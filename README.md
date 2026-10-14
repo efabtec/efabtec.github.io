@@ -1,4 +1,4 @@
-# efab-site
+# efabtec.github.io
 
 Site da EFAB Tecnologia, com as páginas públicas do SmartDespensa exigidas pela Play Console.
 
@@ -6,10 +6,10 @@ HTML e CSS estáticos, sem build, sem JavaScript e sem cookies. Publicado pelo G
 
 | Página | URL |
 |---|---|
-| Site da empresa | https://koicrafts.github.io/efab-site/ |
-| SmartDespensa | https://koicrafts.github.io/efab-site/smartdespensa/ |
-| Política de privacidade | https://koicrafts.github.io/efab-site/smartdespensa/privacidade.html |
-| Exclusão de conta | https://koicrafts.github.io/efab-site/smartdespensa/excluir-conta.html |
+| Site da empresa | https://efabtec.github.io/ |
+| SmartDespensa | https://efabtec.github.io/smartdespensa/ |
+| Política de privacidade | https://efabtec.github.io/smartdespensa/privacidade.html |
+| Exclusão de conta | https://efabtec.github.io/smartdespensa/excluir-conta.html |
 
 ## Rodar localmente
 
