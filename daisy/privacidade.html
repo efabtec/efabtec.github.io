@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidade · Daisy</title>
+  <meta name="description" content="Política de privacidade do aplicativo Daisy, da EFAB Tecnologia.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../">EFAB <span>Tecnologia</span></a>
+      <nav>
+        <a href="./">Daisy</a>
+        <a href="privacidade.html">Privacidade</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Política de privacidade do Daisy</h1>
+    <p class="meta">Vigente desde 24 de outubro de 2026.</p>
+
+    <p>Esta política explica quais dados o aplicativo Daisy trata, para quê, com quem eles são compartilhados e como você exerce seus direitos, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018, LGPD).</p>
+
+    <h2>1. Quem é o controlador</h2>
+    <p>EDUARDO FELIPE ARDIGO BRAGA LTDA (EFAB Tecnologia), CNPJ 69.302.371/0001-24, com sede em Curitiba/PR.</p>
+    <p>Canal para assuntos de privacidade e proteção de dados: <a href="mailto:efab.tec@gmail.com">efab.tec@gmail.com</a>.</p>
+
+    <h2>2. Como o app guarda seus dados</h2>
+    <ul>
+      <li><strong>No seu aparelho, por padrão:</strong> o Daisy não pede conta nem login. Os pets, os registros, os pesos, os remédios e os anexos que você cadastra ficam só no aparelho. Eles não são enviados para nossos servidores e ficam fora do backup automático do Android.</li>
+      <li><strong>Identificador anônimo:</strong> o app cria um identificador anônimo (Firebase Authentication) só para proteger o acesso à leitura da carteirinha por foto e limitar o uso diário desse recurso. Ele não está ligado ao seu nome, e-mail ou telefone.</li>
+      <li><strong>Backup na nuvem:</strong> quando existir, será opcional e você escolherá ativar. Antes disso, esta política será atualizada para explicar o que vai para a nuvem.</li>
+    </ul>
+
+    <h2>3. Dados que tratamos e por quê</h2>
+    <p>Os dados do tutor e do pet tratados pelo app são dados pessoais comuns. A saúde do pet não é dado pessoal sensível na LGPD; ainda assim, ela fica só no seu aparelho.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Dado</th><th>Onde fica</th><th>Finalidade</th><th>Base legal (LGPD, art. 7º)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Perfil do pet (nome, espécie, raça, nascimento, sexo, castração, microchip e foto), vacinas, vermífugos, antiparasitários, pesos, remédios, lembretes e anexos (exames, receitas e laudos)</td>
+            <td>Só no aparelho</td>
+            <td>Prestar o serviço: guardar o histórico e avisar a próxima dose</td>
+            <td>Execução de contrato (V)</td>
+          </tr>
+          <tr>
+            <td>Foto da página da carteirinha que você fotografa</td>
+            <td>Enviada para leitura e descartada (veja a seção 4)</td>
+            <td>Ler os registros da carteirinha com inteligência artificial</td>
+            <td>Execução de contrato (V)</td>
+          </tr>
+          <tr>
+            <td>Identificador anônimo e contador diário de leituras</td>
+            <td>Servidores do Google (Firebase)</td>
+            <td>Proteger a leitura por foto e limitar o uso diário</td>
+            <td>Legítimo interesse (IX)</td>
+          </tr>
+          <tr>
+            <td>Dados de uso do app e identificador do aparelho, sem o identificador de publicidade</td>
+            <td>Google Analytics for Firebase</td>
+            <td>Entender como o app é usado e melhorar recursos</td>
+            <td>Legítimo interesse (IX)</td>
+          </tr>
+          <tr>
+            <td>Relatórios de falhas e de desempenho, modelo do aparelho e versão do sistema</td>
+            <td>Firebase Crashlytics e Performance Monitoring</td>
+            <td>Corrigir erros e melhorar a estabilidade</td>
+            <td>Legítimo interesse (IX)</td>
+          </tr>
+          <tr>
+            <td>Sinais de integridade do app e do aparelho</td>
+            <td>Firebase App Check e Play Integrity</td>
+            <td>Proteger o serviço contra uso indevido e fraude</td>
+            <td>Legítimo interesse (IX)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Não vendemos seus dados e não os usamos para publicidade. Os eventos de uso não incluem o nome do pet nem o conteúdo dos registros.</p>
+
+    <h2>4. Câmera e inteligência artificial</h2>
+    <ul>
+      <li>A câmera é usada só quando você fotografa a carteirinha, a foto do pet ou um anexo.</li>
+      <li>Ao fotografar a carteirinha, a foto sai do aparelho: ela vai para os nossos servidores (Cloud Functions for Firebase) e é lida pela API Gemini, do Google. O app avisa isso antes da primeira foto.</li>
+      <li>Não guardamos a foto. O app recebe a lista de registros lidos, você revisa e só o que você confirmar entra no histórico, no seu aparelho. A cópia temporária da foto no aparelho é apagada depois da leitura.</li>
+      <li>Registramos dados técnicos de cada leitura (identificador anônimo, resultado, modelo usado, tempo de resposta e volume processado), sem a foto e sem o conteúdo lido, para controle de uso e correção de erros.</li>
+      <li>Fotografe só a carteirinha, sem documentos ou dados de outras pessoas.</li>
+      <li>A leitura por IA pode errar. O Daisy registra o que o veterinário aplicou e a data que ele definiu; ele não sugere vacina, dose, protocolo ou diagnóstico. Siga a orientação do seu veterinário.</li>
+    </ul>
+
+    <h2>5. Permissões do aparelho</h2>
+    <ul>
+      <li><strong>Câmera:</strong> fotografar a carteirinha, a foto do pet e anexos.</li>
+      <li><strong>Notificações:</strong> avisos da próxima dose e lembretes de remédio. Você pode desativá-las no app ou nas configurações do Android.</li>
+      <li><strong>Alarmes exatos:</strong> lembretes de remédio no horário marcado.</li>
+      <li><strong>Inicialização do aparelho:</strong> reagendar os avisos depois de reiniciar.</li>
+      <li><strong>Internet:</strong> leitura da carteirinha por foto e envio de relatórios de falhas.</li>
+    </ul>
+    <p>O app não usa o identificador de publicidade.</p>
+
+    <h2>6. Com quem compartilhamos</h2>
+    <ul>
+      <li><strong>Google</strong>, como operador: Firebase (autenticação anônima, Cloud Functions, Cloud Firestore para o contador de leituras, Remote Config, Analytics, Crashlytics, Performance Monitoring e App Check), API Gemini e Google Play (integridade). Esses serviços podem estar fora do Brasil (veja a seção 7).</li>
+      <li><strong>Quem você escolher:</strong> o histórico em PDF e os anexos só saem do app quando você os compartilha.</li>
+      <li><strong>Autoridades</strong>: quando a lei ou uma ordem judicial exigir.</li>
+    </ul>
+
+    <h2>7. Transferência internacional</h2>
+    <p>Os serviços do Google podem processar dados em servidores fora do Brasil, como nos Estados Unidos. Essa transferência segue o art. 33 da LGPD, com base nas cláusulas contratuais e nas garantias de proteção de dados oferecidas pelo Google aos seus clientes.</p>
+
+    <h2>8. Por quanto tempo guardamos</h2>
+    <ul>
+      <li><strong>Dados no aparelho:</strong> até você excluí-los no app (excluir um pet apaga o perfil e o histórico dele) ou desinstalar o app.</li>
+      <li><strong>Foto da carteirinha:</strong> não é guardada depois da leitura.</li>
+      <li><strong>Contador diário de leituras:</strong> apagado automaticamente depois de 2 dias.</li>
+      <li><strong>Analytics:</strong> até 14 meses. <strong>Crashlytics:</strong> até 90 dias.</li>
+      <li><strong>Registros técnicos dos servidores:</strong> até 30 dias.</li>
+    </ul>
+
+    <h2>9. Seus direitos</h2>
+    <p>Pela LGPD (art. 18), você pode pedir a qualquer momento:</p>
+    <ul>
+      <li>confirmação de que tratamos seus dados e acesso a eles;</li>
+      <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+      <li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade;</li>
+      <li>portabilidade dos dados;</li>
+      <li>eliminação dos dados e informação sobre com quem eles foram compartilhados;</li>
+      <li>oposição a tratamentos baseados em legítimo interesse.</li>
+    </ul>
+    <p>Como seus registros ficam no aparelho, você mesmo os corrige, exporta (histórico em PDF) e apaga no app. Para os demais pedidos, escreva para <a href="mailto:efab.tec@gmail.com">efab.tec@gmail.com</a>. Respondemos em até 15 dias. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+    <p>O app não tem conta: não há conta para excluir. Desinstalar o app apaga os dados do aparelho e desfaz o vínculo com o identificador anônimo.</p>
+
+    <h2>10. Segurança</h2>
+    <p>A foto enviada para leitura trafega com criptografia (HTTPS/TLS). A leitura só é aceita de um app íntegro e autêntico (App Check) e tem limite diário por identificador. Os dados no aparelho ficam na área privada do app, que outros apps não acessam. Nenhum sistema é totalmente imune a incidentes; se ocorrer um incidente relevante, avisaremos você e a ANPD, conforme a lei.</p>
+
+    <h2>11. Crianças e adolescentes</h2>
+    <p>O Daisy não é direcionado a menores de 13 anos e não coleta intencionalmente dados de crianças. Se você souber que uma criança nos forneceu dados, fale conosco para que possamos apagá-los.</p>
+
+    <h2>12. Alterações nesta política</h2>
+    <p>Podemos atualizar esta política quando o app mudar, por exemplo ao lançar o backup na nuvem. A data de vigência no topo indica a versão atual. Se a mudança for relevante, avisaremos no app.</p>
+
+    <h2>13. Contato</h2>
+    <p>EFAB Tecnologia · <a href="mailto:efab.tec@gmail.com">efab.tec@gmail.com</a> · Curitiba/PR</p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p>EFAB Tecnologia · EDUARDO FELIPE ARDIGO BRAGA LTDA · CNPJ 69.302.371/0001-24</p>
+      <p>Curitiba/PR · <a href="mailto:efab.tec@gmail.com">efab.tec@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
