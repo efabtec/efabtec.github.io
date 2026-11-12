@@ -34,13 +34,13 @@
     <p>Canal para assuntos de privacidade e proteção de dados: <a href="mailto:efab.tec@gmail.com">efab.tec@gmail.com</a>.</p>
 
     <h2>2. O que fica só no seu aparelho</h2>
-    <p>A lista dos seus remédios fica guardada no seu aparelho e não é enviada para nós:</p>
+    <p>A lista dos seus remédios fica guardada no seu aparelho e não é enviada para nós, a não ser que você escolha compartilhar a farmácia com outras pessoas (veja “Farmácia compartilhada, se você ativar”):</p>
     <ul>
       <li>os remédios que você cadastra, com validade, lote, quantidade e local de guarda;</li>
       <li>a lista de reposição;</li>
       <li>as suas escolhas no aplicativo.</li>
     </ul>
-    <p>Esses dados dizem algo sobre a sua saúde. Por isso o aplicativo não os copia para servidores, não os inclui no backup do Android e não os transfere para outro aparelho. Se você desinstalar o aplicativo ou trocar de aparelho, a lista se perde.</p>
+    <p>Esses dados dizem algo sobre a sua saúde. Por isso, enquanto você não compartilha a farmácia, o aplicativo não os copia para servidores, não os inclui no backup do Android e não os transfere sozinho para outro aparelho. Se você desinstalar o aplicativo ou trocar de aparelho, a lista se perde, a não ser que você a exporte antes: em Configurações, “Exportar meus dados” grava um arquivo com a lista no lugar que você escolher, e “Importar dados” a recupera. Esse arquivo não tem senha e a guarda dele é sua; o aplicativo não o envia a ninguém.</p>
     <p>A leitura do código de barras e a leitura da data de validade pela câmera são feitas no próprio aparelho. Essas imagens não saem dele.</p>
 
     <h2>3. O que sai do seu aparelho, e quando</h2>
@@ -54,6 +54,18 @@
       <li>o aplicativo avisa você antes da primeira foto, e você pode sempre digitar o nome em vez de fotografar.</li>
     </ul>
     <p>Para evitar abuso desse recurso, o aplicativo cria uma conta anônima, sem nome, e-mail ou telefone, e conta quantas leituras ela fez no dia. Essa contagem é apagada automaticamente em até dois dias.</p>
+
+    <h3>Farmácia compartilhada, se você ativar</h3>
+    <p>Você pode compartilhar a sua farmácia com até cinco pessoas, para que todas vejam e editem a mesma lista. Isso é opcional e só acontece depois de você entrar com a sua conta Google, em Configurações, e aceitar, na tela da família, o aviso de que a lista passa a ficar guardada em servidores. Só entrar com a conta não envia nada.</p>
+    <p>A partir do momento em que você convida alguém ou entra na farmácia de outra pessoa:</p>
+    <ul>
+      <li>os remédios, as caixas (com validade, lote, quantidade e local), os locais de guarda e a lista de reposição da farmácia ficam guardados em servidores do Google Firebase, para chegar aos outros aparelhos;</li>
+      <li>as pessoas da farmácia veem tudo o que está nela;</li>
+      <li>guardamos o seu nome e o seu e-mail da conta Google, e as outras pessoas da farmácia veem o seu nome;</li>
+      <li>se quem criou a farmácia assina o Premium, guardamos essa informação para que ela valha para os membros.</li>
+    </ul>
+    <p>Quem entra na farmácia de outra pessoa escolhe juntar as caixas que já tinha ou deixá-las guardadas no próprio aparelho. Caixas juntadas passam a fazer parte da farmácia compartilhada e ficam com ela se a pessoa sair.</p>
+    <p>Para parar: quem entrou sai pela tela da família e deixa de ver a farmácia; quem criou pode remover pessoas ou parar de compartilhar, o que apaga a cópia guardada nos servidores e mantém a lista no aparelho de quem criou.</p>
 
     <h3>Estatísticas de uso e relatórios de erro, se você ligar</h3>
     <p>Você escolhe, na primeira abertura e a qualquer momento em Configurações, se quer enviar estatísticas de uso e relatórios de erro. A opção vem desligada.</p>
@@ -76,6 +88,8 @@
         </thead>
         <tbody>
           <tr><td>Lista de remédios, no aparelho</td><td>Fazer o aplicativo funcionar</td><td>Consentimento, dado na primeira abertura (art. 11, I)</td></tr>
+          <tr><td>Lista de remédios, nos servidores, para quem compartilha</td><td>Manter a mesma lista nos aparelhos das pessoas da farmácia</td><td>Consentimento específico, dado na tela da família antes de compartilhar (art. 11, I)</td></tr>
+          <tr><td>Nome e e-mail da conta Google, para quem compartilha</td><td>Identificar você para as outras pessoas da farmácia e controlar quem acessa</td><td>Consentimento (art. 7º, I)</td></tr>
           <tr><td>Foto da caixa</td><td>Ler o nome do remédio a seu pedido</td><td>Consentimento, dado antes da primeira foto (art. 11, I)</td></tr>
           <tr><td>Conta anônima e contagem de leituras</td><td>Evitar abuso do recurso de leitura</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
           <tr><td>Estatísticas de uso e relatórios de erro</td><td>Corrigir falhas e melhorar o aplicativo</td><td>Consentimento (art. 7º, I)</td></tr>
@@ -91,8 +105,9 @@
 
     <h2>6. Com quem compartilhamos</h2>
     <p>Não vendemos seus dados e não os usamos para publicidade.</p>
+    <p>Se você compartilha a farmácia, as pessoas que você convidou, ou a pessoa que convidou você e as demais da farmácia dela, veem a lista e o seu nome. Fora isso, ninguém mais.</p>
     <ul>
-      <li><strong>Google</strong>, como operador: Firebase (conta anônima, Cloud Functions, Analytics, Crashlytics, Performance Monitoring e App Check) e API Gemini. O Google trata esses dados em nosso nome, em infraestrutura que pode estar fora do Brasil (veja a seção 7).</li>
+      <li><strong>Google</strong>, como operador: Firebase (conta anônima ou conta Google, Firestore para a farmácia de quem a compartilha, Cloud Functions, Analytics, Crashlytics, Performance Monitoring e App Check) e API Gemini. O Google trata esses dados em nosso nome, em infraestrutura que pode estar fora do Brasil (veja a seção 7).</li>
       <li><strong>Autoridades</strong>: quando a lei ou uma ordem judicial exigir.</li>
     </ul>
 
@@ -102,6 +117,8 @@
     <h2>8. Por quanto tempo guardamos</h2>
     <ul>
       <li><strong>Dados no aparelho:</strong> enquanto o aplicativo estiver instalado, ou até você apagá-los.</li>
+      <li><strong>Farmácia compartilhada, nos servidores:</strong> enquanto o compartilhamento durar. Quando quem criou a farmácia para de compartilhar ou apaga os dados, a cópia é apagada. O vínculo de quem sai é apagado na saída.</li>
+      <li><strong>Nome e e-mail da conta Google:</strong> enquanto a conta existir no aplicativo; “Apagar meus dados” a remove.</li>
       <li><strong>Foto da caixa:</strong> não é guardada.</li>
       <li><strong>Contagem de leituras por foto:</strong> até dois dias.</li>
       <li><strong>Analytics:</strong> até 14 meses. <strong>Crashlytics:</strong> até 90 dias.</li>
@@ -111,12 +128,13 @@
     <h2>9. Seus direitos</h2>
     <p>Você pode, a qualquer momento:</p>
     <ul>
-      <li><strong>apagar todos os seus dados</strong> em Configurações, em “Apagar meus dados”, o que remove a lista, os avisos agendados, o consentimento e a conta anônima (veja <a href="excluir-dados.html">como apagar seus dados</a>);</li>
+      <li><strong>apagar todos os seus dados</strong> em Configurações, em “Apagar meus dados”, o que remove a lista, os avisos agendados, os consentimentos e a sua conta no aplicativo. Se você compartilha a farmácia, isso também tira você dela; se foi você quem a criou, encerra o compartilhamento para todos e apaga a cópia guardada nos servidores (veja <a href="excluir-dados.html">como apagar seus dados</a>);</li>
+      <li><strong>parar de compartilhar</strong> a farmácia a qualquer momento, pela tela da família;</li>
       <li><strong>retirar o consentimento</strong> das estatísticas em Configurações;</li>
       <li>pedir confirmação, acesso, correção, eliminação, portabilidade e informações sobre o tratamento dos seus dados, pelo e-mail <a href="mailto:efab.tec@gmail.com">efab.tec@gmail.com</a>. Respondemos em até 15 dias;</li>
       <li>reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</li>
     </ul>
-    <p>Como a lista de remédios fica só no seu aparelho, nós não temos como acessá-la, corrigi-la nem recuperá-la.</p>
+    <p>Enquanto você não compartilha a farmácia, a lista de remédios fica só no seu aparelho, e nós não temos como acessá-la, corrigi-la nem recuperá-la.</p>
 
     <h2>10. Segurança</h2>
     <p>A lista fica na área privada do aplicativo no aparelho. O que sai do aparelho trafega com criptografia (HTTPS/TLS), e a leitura por foto exige um aplicativo íntegro e autêntico (App Check). Nenhum sistema é totalmente imune a incidentes; se ocorrer um incidente relevante, avisaremos você e a ANPD, conforme a lei.</p>
