@@ -20,6 +20,7 @@ publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decis
 | Ajuda do Daisy | https://efabtec.github.io/daisy/ajuda.html |
 | Política de privacidade do Daisy | https://efabtec.github.io/daisy/privacidade.html |
 | Farmacinha | https://efabtec.github.io/farmacinha/ |
+| Ajuda da Farmacinha | https://efabtec.github.io/farmacinha/ajuda.html |
 | Política de privacidade da Farmacinha (rascunho) | https://efabtec.github.io/farmacinha/privacidade.html |
 | Termos de uso da Farmacinha (rascunho) | https://efabtec.github.io/farmacinha/termos.html |
 | Como apagar os dados da Farmacinha (rascunho) | https://efabtec.github.io/farmacinha/excluir-dados.html |

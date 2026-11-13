@@ -11,6 +11,8 @@ export interface Link {
 export interface App {
   slug: Exclude<Tema, "efab">;
   nome: string;
+  /** Gênero do nome, para a concordância ("a Farmacinha"). Padrão: masculino. */
+  genero?: "m" | "f";
   /** Arquivo do símbolo em public/logos/<slug>/, usado no cabeçalho e como favicon. */
   simbolo?: string;
   /** Selo curto acima do título, como "Android" ou "Android · em breve". */

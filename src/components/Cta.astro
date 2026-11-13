@@ -3,6 +3,7 @@
 // publicado → Google Play; teste → opt-in do teste (ou pedido por e-mail); em breve → aviso do lançamento.
 import type { App } from "../data/tipos";
 import { efab } from "../data/efab";
+import { lancado, oNome, ONome } from "../data/artigo";
 
 interface Props {
   app: App;
@@ -21,15 +22,15 @@ if (app.status === "publicado" && app.links.play) {
 } else if (app.status === "teste" && app.links.teste) {
   rotulo = "Entrar no teste";
   href = app.links.teste;
-  nota = `O ${app.nome} está em teste na Google Play. Entre pelo link com a conta Google do seu Android.`;
+  nota = `${ONome(app)} está em teste na Google Play. Entre pelo link com a conta Google do seu Android.`;
 } else if (app.status === "teste") {
   rotulo = "Pedir convite para o teste";
-  href = email(`Quero testar o ${app.nome}`);
-  nota = `O ${app.nome} está em teste fechado na Google Play. Peça o convite por e-mail.`;
+  href = email(`Quero testar ${oNome(app)}`);
+  nota = `${ONome(app)} está em teste fechado na Google Play. Peça o convite por e-mail.`;
 } else {
   rotulo = "Pedir aviso do lançamento";
-  href = email(`Quero saber quando o ${app.nome} for lançado`);
-  nota = `O ${app.nome} chega em breve ao Android. Avisamos você por e-mail.`;
+  href = email(`Quero saber quando ${oNome(app)} for ${lancado(app)}`);
+  nota = `${ONome(app)} chega em breve ao Android. Avisamos você por e-mail.`;
 }
 const externo = href.startsWith("http");
 ---

@@ -1,12 +1,13 @@
 ---
-import type { Planos, ValorDoPlano } from "../data/tipos";
+import type { App, Planos, ValorDoPlano } from "../data/tipos";
+import { doNome } from "../data/artigo";
 
 interface Props {
-  nome: string;
+  app: App;
   planos: Planos;
 }
 
-const { nome, planos } = Astro.props;
+const { app, planos } = Astro.props;
 const temPreco = Boolean(planos.precoMensal || planos.precoAnual);
 ---
 
@@ -19,7 +20,7 @@ const temPreco = Boolean(planos.precoMensal || planos.precoAnual);
       <div class="card plano">
         <h3>Grátis</h3>
         <p class="plano-preco">R$ 0</p>
-        <p>O essencial do {nome}, sem prazo e sem anúncios.</p>
+        <p>O essencial {doNome(app)}, sem prazo e sem anúncios.</p>
       </div>
       <div class="card plano plano-premium">
         <h3>Premium</h3>
@@ -40,7 +41,7 @@ const temPreco = Boolean(planos.precoMensal || planos.precoAnual);
 
     <div class="table-scroll">
       <table class="tabela-planos">
-        <caption class="visualmente-oculto">O que cada plano do {nome} inclui</caption>
+        <caption class="visualmente-oculto">O que cada plano {doNome(app)} inclui</caption>
         <thead>
           <tr>
             <th scope="col">Recurso</th>
@@ -109,6 +110,10 @@ const temPreco = Boolean(planos.precoMensal || planos.precoAnual);
     font-size: 1rem;
     font-weight: 600;
     color: var(--tinta-suave);
+  }
+
+  .plano-preco > span:not(.plano-ou) {
+    white-space: nowrap;
   }
 
   .plano-ou {
