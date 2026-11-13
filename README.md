@@ -13,6 +13,7 @@ publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decis
 | Site da empresa | https://efabtec.github.io/ |
 | Sobre a EFAB | https://efabtec.github.io/sobre.html |
 | SmartDespensa | https://efabtec.github.io/smartdespensa/ |
+| Ajuda do SmartDespensa | https://efabtec.github.io/smartdespensa/ajuda.html |
 | Política de privacidade do SmartDespensa | https://efabtec.github.io/smartdespensa/privacidade.html |
 | Exclusão de conta | https://efabtec.github.io/smartdespensa/excluir-conta.html |
 | Daisy | https://efabtec.github.io/daisy/ |
@@ -53,6 +54,18 @@ escopadas em `[data-tema="<app>"]`, e falha se algum par de texto ficar sem cont
 Mudou um tema ou um logo num app? Rode `npm run sync-tokens`, que copia os tokens e os logos dos
 clones irmãos (`../SmartDespensa`, `../farmacinha`, `../daisy`) e regera o CSS. O CI não lê os
 repositórios dos apps, que são privados: o resultado é commitado aqui.
+
+O SmartDespensa ainda não tem logos em SVG no repo do app: `public/logos/smartdespensa/smartdespensa-simbolo.svg`
+foi traduzido à mão de `ic_mascot_foreground.xml` e o `sync-tokens` não o sobrescreve.
+
+## Páginas dos apps
+
+A landing (`src/components/Landing.astro`) e a ajuda (`Ajuda.astro`) saem dos dados do app. Cada seção
+aparece só se o dado existir: `grupos`, `passos`, `planos`, `faq` (as com `destaque` vão para a
+landing) e `ajuda`. A chamada principal (`Cta.astro`) segue o `status`: `publicado` com `links.play`
+leva à Google Play; `teste` com `links.teste` leva ao opt-in, e sem link vira pedido de convite por
+e-mail; `em-breve` pede aviso do lançamento por e-mail. Preço de referência em
+`planos.precoMensal`/`precoAnual`; sem ele, a página diz que o valor aparece na Google Play.
 
 ## Manutenção
 

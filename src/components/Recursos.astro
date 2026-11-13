@@ -1,0 +1,55 @@
+---
+import type { App } from "../data/tipos";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+const grupos = app.grupos ?? [{ titulo: "", itens: app.recursos }];
+---
+
+<section class="secao" id="recursos" aria-labelledby="titulo-recursos">
+  <div class="wrap">
+    <span class="sobretitulo">Recursos</span>
+    <h2 id="titulo-recursos">O que o {app.nome} faz</h2>
+    <div class="grade-recursos">
+      {
+        grupos.map((g) => (
+          <div class="card">
+            {g.titulo && <h3>{g.titulo}</h3>}
+            <ul class="lista-check">
+              {g.itens.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    {app.ressalva && <p class="ressalva">{app.ressalva}</p>}
+  </div>
+</section>
+
+<style>
+  .grade-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .grade-recursos .card {
+    margin: 0;
+  }
+
+  .grade-recursos h3 {
+    margin-top: 0;
+  }
+
+  .ressalva {
+    margin: 20px 0 0;
+    color: var(--tinta-suave);
+    max-width: 70ch;
+  }
+</style>

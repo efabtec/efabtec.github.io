@@ -19,6 +19,7 @@ const { app, titulo, descricao, noindex, pagina } = Astro.props;
 const simbolo = app.simbolo ? `/logos/${app.slug}/${app.simbolo}` : undefined;
 const links = [
   { rotulo: "Início", href: "./" },
+  ...(app.ajuda ? [{ rotulo: "Ajuda", href: "ajuda.html" }] : []),
   ...app.legais.map((l) => ({ rotulo: l.curto, href: l.href })),
   { rotulo: "EFAB", href: "/" },
 ];
