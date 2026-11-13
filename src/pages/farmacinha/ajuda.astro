@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/apps/Farmacinha.astro";
+import Ajuda from "../../components/Ajuda.astro";
+import { farmacinha as app } from "../../data/apps";
+---
+
+<Layout
+  titulo="Ajuda · Farmacinha"
+  descricao="Como usar a Farmacinha: cadastrar caixas, locais de guarda, avisos de validade, reposição, farmácia compartilhada, cópia de segurança e Premium."
+  pagina="ajuda.html"
+>
+  <Ajuda app={app} />
+</Layout>

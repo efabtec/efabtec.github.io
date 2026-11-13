@@ -1,4 +1,5 @@
 ---
+import { oNome } from "../data/artigo";
 import type { App } from "../data/tipos";
 
 interface Props {
@@ -12,7 +13,7 @@ const grupos = app.grupos ?? [{ titulo: "", itens: app.recursos }];
 <section class="secao" id="recursos" aria-labelledby="titulo-recursos">
   <div class="wrap">
     <span class="sobretitulo">Recursos</span>
-    <h2 id="titulo-recursos">O que o {app.nome} faz</h2>
+    <h2 id="titulo-recursos">O que {oNome(app)} faz</h2>
     <div class="grade-recursos">
       {
         grupos.map((g) => (

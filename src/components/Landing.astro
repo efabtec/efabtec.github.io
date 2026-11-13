@@ -1,4 +1,5 @@
 ---
+import { oNome } from "../data/artigo";
 // Página inicial de um app, montada a partir de src/data/apps/<app>.ts. Cada seção só aparece
 // se o app tiver o dado correspondente.
 import type { App } from "../data/tipos";
@@ -21,7 +22,7 @@ const destaques = app.faq?.filter((p) => p.destaque) ?? [];
 <HeroApp app={app} />
 <Recursos app={app} />
 {app.passos && <Passos passos={app.passos} />}
-{app.planos && <Planos nome={app.nome} planos={app.planos} />}
+{app.planos && <Planos app={app} planos={app.planos} />}
 {
   destaques.length > 0 && (
     <section class="secao">
@@ -41,7 +42,7 @@ const destaques = app.faq?.filter((p) => p.destaque) ?? [];
   <div class="wrap">
     <div class="faixa">
       <div>
-        <h2>{app.fraseFinal ?? `Comece a usar o ${app.nome}`}</h2>
+        <h2>{app.fraseFinal ?? `Comece a usar ${oNome(app)}`}</h2>
         <Cta app={app} />
       </div>
     </div>

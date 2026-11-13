@@ -1,4 +1,5 @@
 ---
+import { oNome } from "../data/artigo";
 import type { App } from "../data/tipos";
 import { efab } from "../data/efab";
 import Faq from "./Faq.astro";
@@ -13,7 +14,7 @@ const topicos = app.ajuda ?? [];
 
 <div class="wrap estreito conteudo">
   <span class="sobretitulo">Ajuda</span>
-  <h1>Como usar o {app.nome}</h1>
+  <h1>Como usar {oNome(app)}</h1>
   <p class="lead">O passo a passo das tarefas mais comuns e as respostas para as dúvidas frequentes.</p>
 
   <nav class="card sumario" aria-labelledby="titulo-sumario">
@@ -45,7 +46,7 @@ const topicos = app.ajuda ?? [];
   <h2>Ainda com dúvida?</h2>
   <p>Escreva para nós. Quem responde é quem faz o app.</p>
   <div class="botoes">
-    <a class="botao" href={`mailto:${efab.email}?subject=${encodeURIComponent(`Dúvida sobre o ${app.nome}`)}`}>Escrever um e-mail</a>
+    <a class="botao" href={`mailto:${efab.email}?subject=${encodeURIComponent(`Dúvida sobre ${oNome(app)}`)}`}>Escrever um e-mail</a>
   </div>
 </div>
 
