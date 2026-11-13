@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/apps/Daisy.astro";
+import Ajuda from "../../components/Ajuda.astro";
+import { daisy as app } from "../../data/apps";
+---
+
+<Layout
+  titulo="Ajuda · Daisy"
+  descricao="Como usar o Daisy: cadastrar pela foto da carteirinha, avisos da próxima dose, lembretes de remédio, peso, anexos e PDF."
+  pagina="ajuda.html"
+>
+  <Ajuda app={app} />
+</Layout>
