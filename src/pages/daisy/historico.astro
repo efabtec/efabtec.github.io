@@ -1,0 +1,136 @@
+---
+// Histórico compartilhado pelo link temporário do app (PET-30). O app grava um resumo do pet em
+// links/{id} no Firestore do Daisy; esta página lê pelo id que vem depois do "#" (o navegador não
+// manda essa parte ao servidor), pela API REST do Firestore, sem login. As regras do Firestore só
+// liberam a leitura antes do prazo. É a única página do site com JavaScript: o conteúdo é de cada
+// tutor e não existe no build. Nada de terceiros é carregado, e o texto do tutor entra sempre como
+// texto, nunca como HTML.
+import Layout from "../../layouts/apps/Daisy.astro";
+---
+
+<Layout
+  titulo="Histórico do pet · Daisy"
+  descricao="Histórico de vacinas, remédios e peso compartilhado pelo app Daisy."
+  pagina="historico.html"
+  noindex
+>
+  <article class="wrap estreito legal" id="historico" aria-live="polite">
+    <p id="estado">Carregando o histórico…</p>
+    <div id="conteudo" hidden>
+      <h1 id="titulo"></h1>
+      <p id="dados"></p>
+      <p id="prazo"></p>
+      <h2>Vacinas, vermífugos e antiparasitários</h2>
+      <ul id="doses"></ul>
+      <h2>Remédios em uso</h2>
+      <ul id="remedios"></ul>
+      <h2>Peso</h2>
+      <p id="peso"></p>
+      <p>
+        <strong>Este histórico é um resumo do que o tutor registrou no app Daisy e não substitui a
+        carteirinha assinada pelo veterinário.</strong> Siga a orientação do veterinário do pet.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<script>
+  const PROJETO = "daisy-ed6de";
+  const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+  const ESPECIES: Record<string, string> = { CAO: "Cão", GATO: "Gato", OUTRO: "Outro" };
+  const SEXOS: Record<string, string> = { MACHO: "Macho", FEMEA: "Fêmea" };
+  const TIPOS: Record<string, string> = { VACINA: "Vacina", VERMIFUGO: "Vermífugo", ANTIPARASITARIO: "Antiparasitário" };
+
+  type Valor = Record<string, unknown>;
+
+  /** Um valor do Firestore REST ({ stringValue: "..." }, { mapValue: {...} }...) como valor de JavaScript. */
+  const ler = (v: Valor | undefined): unknown => {
+    if (!v) return null;
+    if ("stringValue" in v) return v.stringValue;
+    if ("integerValue" in v) return Number(v.integerValue);
+    if ("doubleValue" in v) return Number(v.doubleValue);
+    if ("booleanValue" in v) return v.booleanValue;
+    if ("timestampValue" in v) return new Date(String(v.timestampValue));
+    if ("arrayValue" in v) return ((v.arrayValue as { values?: Valor[] }).values ?? []).map(ler);
+    if ("mapValue" in v) return lerCampos((v.mapValue as { fields?: Record<string, Valor> }).fields ?? {});
+    return null;
+  };
+  const lerCampos = (campos: Record<string, Valor>) =>
+    Object.fromEntries(Object.entries(campos).map(([chave, valor]) => [chave, ler(valor)]));
+
+  /** "2027-03-12" → "12/mar/2027", como no app. */
+  const data = (iso: unknown) => {
+    if (typeof iso !== "string") return "";
+    const [ano, mes, dia] = iso.slice(0, 10).split("-").map(Number);
+    return `${String(dia).padStart(2, "0")}/${MESES[mes - 1]}/${ano}`;
+  };
+  const hora = (iso: unknown) => (typeof iso === "string" && iso.length >= 16 ? iso.slice(11, 16) : "");
+  const quando = (d: Date) =>
+    `${String(d.getDate()).padStart(2, "0")}/${MESES[d.getMonth()]}/${d.getFullYear()} às ` +
+    `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+
+  const texto = (id: string, valor: string) => {
+    const elemento = document.getElementById(id);
+    if (elemento) elemento.textContent = valor;
+  };
+  const itens = (id: string, linhas: string[], vazio: string) => {
+    const lista = document.getElementById(id);
+    if (!lista) return;
+    for (const linha of linhas.length ? linhas : [vazio]) {
+      const item = document.createElement("li");
+      item.textContent = linha;
+      lista.appendChild(item);
+    }
+  };
+
+  const mostrar = (link: Record<string, any>) => {
+    const pet = link.pet ?? {};
+    texto("titulo", `Histórico de ${pet.nome ?? "pet"}`);
+    texto(
+      "dados",
+      [ESPECIES[pet.especie], pet.raca, SEXOS[pet.sexo], pet.nascimento ? `nascido em ${data(pet.nascimento)}` : null]
+        .filter(Boolean)
+        .join(" · "),
+    );
+    texto("prazo", `Este link vale até ${quando(link.expiraEm)}.`);
+    itens(
+      "doses",
+      (link.doses ?? []).map(
+        (d: Record<string, string>) =>
+          `${TIPOS[d.tipo] ?? d.tipo}: ${d.produto}, aplicada em ${data(d.aplicadaEm)}` +
+          (d.proxima ? `. Próxima dose definida pelo veterinário: ${data(d.proxima)}` : ""),
+      ),
+      "Nenhum registro.",
+    );
+    itens(
+      "remedios",
+      (link.remedios ?? []).map(
+        (r: Record<string, any>) =>
+          `${r.remedio}: a cada ${r.intervaloHoras} h, desde ${data(r.inicio)} às ${hora(r.inicio)}` +
+          (r.fim ? `, até ${data(r.fim)}` : ""),
+      ),
+      "Nenhum remédio em uso.",
+    );
+    texto(
+      "peso",
+      link.peso
+        ? `${(link.peso.gramas / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 2 })} kg em ${data(link.peso.em)}.`
+        : "Sem pesagem registrada.",
+    );
+    document.getElementById("estado")!.hidden = true;
+    document.getElementById("conteudo")!.hidden = false;
+  };
+
+  const indisponivel = () =>
+    texto("estado", "Este link venceu ou foi encerrado. Peça um link novo a quem cuida do pet.");
+
+  const id = location.hash.slice(1);
+  if (!/^[A-Za-z0-9]{24}$/.test(id)) {
+    indisponivel();
+  } else {
+    fetch(`https://firestore.googleapis.com/v1/projects/${PROJETO}/databases/(default)/documents/links/${id}`)
+      .then((resposta) => (resposta.ok ? resposta.json() : Promise.reject(resposta.status)))
+      .then((documento) => mostrar(lerCampos(documento.fields ?? {})))
+      .catch(indisponivel);
+  }
+</script>

@@ -7,8 +7,10 @@ import sitemap from "@astrojs/sitemap";
 // (junto com public/CNAME e as URLs na Play Console e nos apps).
 const SITE = "https://efabtec.github.io";
 
-// Páginas em rascunho (noindex) ficam fora do sitemap.
+// Páginas em rascunho (noindex) ficam fora do sitemap. O histórico compartilhado também: é
+// noindex e só tem conteúdo com o id de um link.
 const RASCUNHOS = [
+  "/daisy/historico",
   "/farmacinha/privacidade",
   "/farmacinha/termos",
   "/farmacinha/excluir-dados",

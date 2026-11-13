@@ -3,8 +3,8 @@
 Site da EFAB Tecnologia e as páginas públicas dos apps (SmartDespensa, Daisy e Farmacinha), incluindo
 as exigidas pela Play Console.
 
-Feito com [Astro](https://astro.build) e gerado como HTML estático: sem JavaScript no navegador, sem
-cookies, sem analytics, e as fontes vêm do próprio site, sem pedido a terceiros. O GitHub Pages
+Feito com [Astro](https://astro.build) e gerado como HTML estático: sem JavaScript no navegador (a
+exceção é o histórico compartilhado pelo Daisy, abaixo), sem cookies, sem analytics, e as fontes vêm do próprio site, sem pedido a terceiros. O GitHub Pages
 publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decisão no
 [ADR 0051](https://github.com/efabtec/handbook/blob/main/decisoes/0051-site-da-efabtec-em-astro.md).
 
@@ -21,6 +21,7 @@ publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decis
 | Ajuda do Daisy | https://efabtec.github.io/daisy/ajuda.html |
 | Política de privacidade do Daisy | https://efabtec.github.io/daisy/privacidade.html |
 | Termos de uso do Daisy (rascunho) | https://efabtec.github.io/daisy/termos.html |
+| Histórico compartilhado pelo Daisy (noindex) | https://efabtec.github.io/daisy/historico.html#{id} |
 | Farmacinha | https://efabtec.github.io/farmacinha/ |
 | Ajuda da Farmacinha | https://efabtec.github.io/farmacinha/ajuda.html |
 | Política de privacidade da Farmacinha (rascunho) | https://efabtec.github.io/farmacinha/privacidade.html |
@@ -89,6 +90,14 @@ e-mail; `em-breve` pede aviso do lançamento por e-mail. Preço de referência e
 2. Confirme o preço em `planos.precoMensal`/`precoAnual`.
 3. Se o app tem páginas em rascunho, tire o `noindex` (veja abaixo).
 4. No Search Console, envie `https://efabtec.github.io/sitemap-index.xml`, se ainda não enviou.
+
+## Histórico compartilhado pelo Daisy
+
+`daisy/historico.html#{id}` mostra o link temporário que o tutor cria no app (PET-30). A página lê
+`links/{id}` do Firestore do Daisy pela API REST, sem SDK, sem login e sem chave; as regras do
+Firestore só liberam a leitura antes do prazo. É a única página com JavaScript, porque o conteúdo é
+de cada tutor e não existe no build. Fica com `noindex` e fora do sitemap. O caminho está no app
+(`URL_HISTORICO_COMPARTILHADO`): não mude.
 
 ## Manutenção
 
