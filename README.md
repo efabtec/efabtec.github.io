@@ -17,6 +17,7 @@ publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decis
 | Política de privacidade do SmartDespensa | https://efabtec.github.io/smartdespensa/privacidade.html |
 | Exclusão de conta | https://efabtec.github.io/smartdespensa/excluir-conta.html |
 | Daisy | https://efabtec.github.io/daisy/ |
+| Ajuda do Daisy | https://efabtec.github.io/daisy/ajuda.html |
 | Política de privacidade do Daisy | https://efabtec.github.io/daisy/privacidade.html |
 | Farmacinha | https://efabtec.github.io/farmacinha/ |
 | Política de privacidade da Farmacinha (rascunho) | https://efabtec.github.io/farmacinha/privacidade.html |

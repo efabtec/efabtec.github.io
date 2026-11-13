@@ -403,7 +403,17 @@ th {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--marca-suave)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-    center / 12px no-repeat;
+  background: var(--marca-suave);
+}
+
+.lista-check li::after {
+  content: "";
+  position: absolute;
+  left: 8.5px;
+  top: calc(0.35em + 4px);
+  width: 5px;
+  height: 9px;
+  border: solid var(--tinta);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
