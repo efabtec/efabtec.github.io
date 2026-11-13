@@ -1,0 +1,96 @@
+---
+// Página inicial de um app, montada a partir de src/data/apps/<app>.ts. Cada seção só aparece
+// se o app tiver o dado correspondente.
+import type { App } from "../data/tipos";
+import { efab } from "../data/efab";
+import HeroApp from "./HeroApp.astro";
+import Recursos from "./Recursos.astro";
+import Passos from "./Passos.astro";
+import Planos from "./Planos.astro";
+import Faq from "./Faq.astro";
+import Cta from "./Cta.astro";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+const destaques = app.faq?.filter((p) => p.destaque) ?? [];
+---
+
+<HeroApp app={app} />
+<Recursos app={app} />
+{app.passos && <Passos passos={app.passos} />}
+{app.planos && <Planos nome={app.nome} planos={app.planos} />}
+{
+  destaques.length > 0 && (
+    <section class="secao">
+      <div class="wrap">
+        <Faq perguntas={destaques} />
+        {app.ajuda && (
+          <p class="mais-ajuda">
+            <a href="ajuda.html">Ver o guia de uso e todas as perguntas</a>
+          </p>
+        )}
+      </div>
+    </section>
+  )
+}
+
+<section class="secao faixa-final">
+  <div class="wrap">
+    <div class="faixa">
+      <div>
+        <h2>{app.fraseFinal ?? `Comece a usar o ${app.nome}`}</h2>
+        <Cta app={app} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao" id="privacidade-e-suporte">
+  <div class="wrap colunas-finais">
+    <div>
+      <h2>{app.tituloLegais}</h2>
+      <ul>
+        {app.legais.map((l) => <li><a href={l.href}>{l.rotulo}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2>Suporte</h2>
+      <p>Dúvidas, sugestões ou problemas: <a href={`mailto:${efab.email}`}>{efab.email}</a></p>
+      {app.ajuda && <p><a href="ajuda.html">Guia de uso e perguntas frequentes</a></p>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mais-ajuda {
+    margin: 20px 0 0;
+    font-weight: 700;
+  }
+
+  .faixa {
+    padding: 32px 28px;
+    border-radius: var(--raio-lg);
+    background: var(--marca-suave);
+  }
+
+  .faixa h2 {
+    margin: 0 0 18px;
+  }
+
+  .faixa :global(.cta-nota) {
+    color: var(--tinta);
+  }
+
+  .colunas-finais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 8px 40px;
+  }
+
+  .colunas-finais h2 {
+    margin-top: 0;
+  }
+</style>

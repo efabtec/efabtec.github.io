@@ -1,9 +1,9 @@
 ---
 import Layout from "../../layouts/apps/Daisy.astro";
-import PaginaDoApp from "../../components/PaginaDoApp.astro";
+import Landing from "../../components/Landing.astro";
 import { daisy as app } from "../../data/apps";
 ---
 
 <Layout titulo={`${app.nome} · EFAB Tecnologia`} descricao={app.descricao} pagina="./">
-  <PaginaDoApp app={app} />
+  <Landing app={app} />
 </Layout>

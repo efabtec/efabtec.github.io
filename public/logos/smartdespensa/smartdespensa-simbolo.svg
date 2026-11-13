@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="17 17 74 74">
+  <!-- Mascote SmartDespensa (pote sorridente), traduzido de app/src/main/res/drawable/ic_mascot_foreground.xml sem a escala do ícone adaptativo. -->
+  <path fill="#EF9F27" d="M54,20 l2.4,5.6 5.6,2.4 -5.6,2.4 -2.4,5.6 -2.4,-5.6 -5.6,-2.4 5.6,-2.4 z"/>
+  <path fill="#BA7517" d="M52,29 h4 v7 h-4 z"/>
+  <path fill="#EF9F27" d="M34,34 h40 a3,3 0 0 1 0,7 h-40 a3,3 0 0 1 0,-7 z"/>
+  <path fill="#BA7517" d="M37,41 h34 a3,3 0 0 1 0,6 h-34 a3,3 0 0 1 0,-6 z"/>
+  <path fill="#5DCAA5" d="M30,46 h48 a10,10 0 0 1 10,10 v20 a10,10 0 0 1 -10,10 h-48 a10,10 0 0 1 -10,-10 v-20 a10,10 0 0 1 10,-10 z"/>
+  <path fill="#F0997B" fill-opacity="0.9" d="M32,66 m-6,0 a6,4 0 1 0 12,0 a6,4 0 1 0 -12,0 z"/>
+  <path fill="#F0997B" fill-opacity="0.9" d="M76,66 m-6,0 a6,4 0 1 0 12,0 a6,4 0 1 0 -12,0 z"/>
+  <path fill="#123024" d="M43,58 m-4,0 a4,4 0 1 0 8,0 a4,4 0 1 0 -8,0 z"/>
+  <path fill="#123024" d="M65,58 m-4,0 a4,4 0 1 0 8,0 a4,4 0 1 0 -8,0 z"/>
+  <path fill="none" stroke="#123024" stroke-width="3.2" stroke-linecap="round" d="M46,68 q8,9 16,0"/>
+</svg>

@@ -1,0 +1,168 @@
+---
+import type { Planos, ValorDoPlano } from "../data/tipos";
+
+interface Props {
+  nome: string;
+  planos: Planos;
+}
+
+const { nome, planos } = Astro.props;
+const temPreco = Boolean(planos.precoMensal || planos.precoAnual);
+---
+
+<section class="secao" id="planos" aria-labelledby="titulo-planos">
+  <div class="wrap">
+    <span class="sobretitulo">Planos</span>
+    <h2 id="titulo-planos">Grátis para usar. Premium se quiser mais.</h2>
+
+    <div class="planos-cartoes">
+      <div class="card plano">
+        <h3>Grátis</h3>
+        <p class="plano-preco">R$ 0</p>
+        <p>O essencial do {nome}, sem prazo e sem anúncios.</p>
+      </div>
+      <div class="card plano plano-premium">
+        <h3>Premium</h3>
+        {
+          temPreco ? (
+            <p class="plano-preco">
+              {planos.precoMensal && <span>{planos.precoMensal}<small>/mês</small></span>}
+              {planos.precoMensal && planos.precoAnual && <span class="plano-ou"> ou </span>}
+              {planos.precoAnual && <span>{planos.precoAnual}<small>/ano</small></span>}
+            </p>
+          ) : (
+            <p class="plano-preco plano-preco-texto">Mensal ou anual</p>
+          )
+        }
+        <p>Assinatura opcional pela Google Play. Cancele quando quiser.</p>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="tabela-planos">
+        <caption class="visualmente-oculto">O que cada plano do {nome} inclui</caption>
+        <thead>
+          <tr>
+            <th scope="col">Recurso</th>
+            <th scope="col">Grátis</th>
+            <th scope="col">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            planos.linhas.map((l) => (
+              <tr>
+                <th scope="row">{l.recurso}</th>
+                {[l.gratis, l.premium].map((v: ValorDoPlano) => (
+                  <td>
+                    {v === true ? (
+                      <span class="sim"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg><span class="visualmente-oculto">Incluído</span></span>
+                    ) : v === false ? (
+                      <span class="nao"><span aria-hidden="true">—</span><span class="visualmente-oculto">Não incluído</span></span>
+                    ) : (
+                      v
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="planos-notas">
+      {
+        temPreco ? (
+          <li>Preço de referência. O valor final, em reais e com impostos, aparece na Google Play antes da compra.</li>
+        ) : (
+          <li>O preço, em reais e com impostos, aparece na Google Play antes da compra.</li>
+        )
+      }
+      {planos.notas?.map((n) => <li>{n}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .planos-cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0 8px;
+  }
+
+  .plano {
+    margin: 0;
+  }
+
+  .plano h3 {
+    margin: 0;
+  }
+
+  .plano-preco {
+    margin: 6px 0 8px;
+    font: 700 2rem/1.15 var(--fonte-titulo);
+  }
+
+  .plano-preco small {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--tinta-suave);
+  }
+
+  .plano-ou {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--tinta-suave);
+  }
+
+  .plano-preco-texto {
+    font-size: 1.5rem;
+  }
+
+  .plano p:last-child {
+    margin-bottom: 0;
+    color: var(--tinta-suave);
+  }
+
+  .plano-premium {
+    border: 2px solid var(--marca-fundo);
+    background: linear-gradient(var(--marca-suave), var(--marca-suave)) top / 100% 6px no-repeat, var(--superficie);
+  }
+
+  .tabela-planos {
+    min-width: 0;
+  }
+
+  .tabela-planos th[scope="row"] {
+    font-weight: 400;
+    background: none;
+  }
+
+  .tabela-planos td,
+  .tabela-planos thead th:not(:first-child) {
+    text-align: center;
+    width: 22%;
+    white-space: nowrap;
+  }
+
+  .sim svg {
+    fill: none;
+    stroke: var(--ok);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: middle;
+  }
+
+  .nao {
+    color: var(--tinta-suave);
+  }
+
+  .planos-notas {
+    margin: 16px 0 0;
+    color: var(--tinta-suave);
+    font-size: 0.95rem;
+  }
+</style>

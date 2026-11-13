@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/apps/SmartDespensa.astro";
+import Ajuda from "../../components/Ajuda.astro";
+import { smartdespensa as app } from "../../data/apps";
+---
+
+<Layout
+  titulo="Ajuda · SmartDespensa"
+  descricao="Como usar o SmartDespensa: cadastrar itens, importar a nota fiscal, listas, casa compartilhada, Premium e exclusão de conta."
+  pagina="ajuda.html"
+>
+  <Ajuda app={app} />
+</Layout>

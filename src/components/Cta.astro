@@ -1,0 +1,48 @@
+---
+// Chamada principal de um app, decidida pelo status:
+// publicado → Google Play; teste → opt-in do teste (ou pedido por e-mail); em breve → aviso do lançamento.
+import type { App } from "../data/tipos";
+import { efab } from "../data/efab";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+const email = (assunto: string) => `mailto:${efab.email}?subject=${encodeURIComponent(assunto)}`;
+
+let rotulo: string;
+let href: string;
+let nota: string;
+if (app.status === "publicado" && app.links.play) {
+  rotulo = "Baixar na Google Play";
+  href = app.links.play;
+  nota = `Grátis para Android. O Premium é opcional.`;
+} else if (app.status === "teste" && app.links.teste) {
+  rotulo = "Entrar no teste";
+  href = app.links.teste;
+  nota = `O ${app.nome} está em teste na Google Play. Entre pelo link com a conta Google do seu Android.`;
+} else if (app.status === "teste") {
+  rotulo = "Pedir convite para o teste";
+  href = email(`Quero testar o ${app.nome}`);
+  nota = `O ${app.nome} está em teste fechado na Google Play. Peça o convite por e-mail.`;
+} else {
+  rotulo = "Pedir aviso do lançamento";
+  href = email(`Quero saber quando o ${app.nome} for lançado`);
+  nota = `O ${app.nome} chega em breve ao Android. Avisamos você por e-mail.`;
+}
+const externo = href.startsWith("http");
+---
+
+<div class="cta">
+  <a class="botao" href={href} rel={externo ? "noopener" : undefined}>{rotulo}</a>
+  <p class="cta-nota">{nota}</p>
+</div>
+
+<style>
+  .cta-nota {
+    margin: 10px 0 0;
+    font-size: 0.92rem;
+    color: var(--tinta-suave);
+  }
+</style>

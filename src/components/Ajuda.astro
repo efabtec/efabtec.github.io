@@ -1,0 +1,69 @@
+---
+import type { App } from "../data/tipos";
+import { efab } from "../data/efab";
+import Faq from "./Faq.astro";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+const topicos = app.ajuda ?? [];
+---
+
+<div class="wrap estreito conteudo">
+  <span class="sobretitulo">Ajuda</span>
+  <h1>Como usar o {app.nome}</h1>
+  <p class="lead">O passo a passo das tarefas mais comuns e as respostas para as dúvidas frequentes.</p>
+
+  <nav class="card sumario" aria-labelledby="titulo-sumario">
+    <p id="titulo-sumario" class="sumario-titulo">Nesta página</p>
+    <ol>
+      {topicos.map((t) => <li><a href={`#${t.id}`}>{t.titulo}</a></li>)}
+      {app.faq && <li><a href="#perguntas">Perguntas frequentes</a></li>}
+    </ol>
+  </nav>
+
+  {
+    topicos.map((t) => (
+      <section aria-labelledby={t.id}>
+        <h2 id={t.id}>{t.titulo}</h2>
+        {t.passos && (
+          <ol>
+            {t.passos.map((p) => (
+              <li set:html={p} />
+            ))}
+          </ol>
+        )}
+        {t.texto?.map((p) => <p set:html={p} />)}
+      </section>
+    ))
+  }
+
+  {app.faq && <Faq perguntas={app.faq} />}
+
+  <h2>Ainda com dúvida?</h2>
+  <p>Escreva para nós. Quem responde é quem faz o app.</p>
+  <div class="botoes">
+    <a class="botao" href={`mailto:${efab.email}?subject=${encodeURIComponent(`Dúvida sobre o ${app.nome}`)}`}>Escrever um e-mail</a>
+  </div>
+</div>
+
+<style>
+  .sumario-titulo {
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+
+  .sumario ol {
+    margin: 0;
+  }
+
+  section {
+    scroll-margin-top: 16px;
+  }
+
+  h2 {
+    scroll-margin-top: 16px;
+  }
+</style>

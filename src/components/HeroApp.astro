@@ -1,0 +1,89 @@
+---
+import type { App } from "../data/tipos";
+import Cta from "./Cta.astro";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+---
+
+<section class="hero-app">
+  <div class="wrap hero-app-grade">
+    <div>
+      <span class="tag">{app.selo}</span>
+      <h1>
+        {app.chamada ? <><span class="hero-app-nome">{app.nome}</span>{app.chamada}</> : app.nome}
+      </h1>
+      <p class="lead">{app.slogan}</p>
+      <Cta app={app} />
+    </div>
+    {
+      app.simbolo && (
+        <div class="hero-app-arte" aria-hidden="true">
+          <img src={`/logos/${app.slug}/${app.simbolo}`} alt="" width="200" height="200" />
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .hero-app {
+    padding: 48px 0 56px;
+    background: var(--fundo);
+  }
+
+  .hero-app-grade {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .hero-app h1 {
+    font-size: clamp(2.1rem, 6.5vw, 3.3rem);
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+  }
+
+  .hero-app-nome {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+    letter-spacing: 0;
+    color: var(--marca);
+  }
+
+  .hero-app .lead {
+    max-width: 52ch;
+    margin-bottom: 24px;
+  }
+
+  .hero-app-arte {
+    display: none;
+  }
+
+  @media (min-width: 880px) {
+    .hero-app-grade {
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    .hero-app-arte {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      max-width: 340px;
+      justify-self: end;
+      width: 100%;
+      border-radius: 32% 68% 55% 45% / 45% 40% 60% 55%;
+      background: var(--marca-suave);
+    }
+
+    .hero-app-arte img {
+      width: 58%;
+      height: auto;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
+    }
+  }
+</style>
