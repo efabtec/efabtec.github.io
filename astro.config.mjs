@@ -13,6 +13,7 @@ const RASCUNHOS = [
   "/farmacinha/termos",
   "/farmacinha/excluir-dados",
   "/smartdespensa/termos",
+  "/daisy/termos",
 ];
 
 /**
