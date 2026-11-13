@@ -1,33 +1,256 @@
 ---
+// O hub mostra cada app com o tema dele, por isso carrega os temas e as fontes dos três.
+import "@fontsource-variable/baloo-2";
+import "@fontsource-variable/nunito-sans";
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/bricolage-grotesque";
+import "../themes/gerado/smartdespensa.css";
+import "../themes/gerado/daisy.css";
+import "../themes/gerado/farmacinha.css";
 import Layout from "../layouts/Efab.astro";
+import CartaoApp from "../components/CartaoApp.astro";
 import { apps } from "../data/apps";
 import { efab } from "../data/efab";
+
+// Valem para os três apps hoje. Se um deles passar a ter anúncios ou exigir conta, revise.
+const principios = [
+  {
+    titulo: "Sem anúncios",
+    texto: "Nenhum dos nossos apps exibe anúncios. Quem quer mais recursos assina o Premium, que é opcional.",
+    icone: "M4 6h16v12H4zM8 10h8M8 14h5",
+  },
+  {
+    titulo: "Seus dados não estão à venda",
+    texto: "Não vendemos seus dados nem os usamos para publicidade. Cada app tem uma política de privacidade clara.",
+    icone: "M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z",
+  },
+  {
+    titulo: "Comece sem cadastro",
+    texto: "Os apps funcionam sem criar conta. A conta só entra quando você quer sincronizar ou compartilhar.",
+    icone: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0",
+  },
+  {
+    titulo: "Feito em Curitiba",
+    texto: "Uma empresa brasileira, com suporte em português direto com quem faz os apps.",
+    icone: "M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12zM12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
+  },
+];
 ---
 
 <Layout
-  titulo="EFAB Tecnologia"
+  titulo="EFAB Tecnologia · Aplicativos para a rotina da casa"
   descricao="A EFAB Tecnologia cria aplicativos que simplificam a rotina da casa. Conheça o SmartDespensa, o Daisy e a Farmacinha."
 >
-  <h1>Aplicativos que simplificam a rotina da casa</h1>
-  <p class="lead">
-    A EFAB Tecnologia é uma empresa de Curitiba/PR que desenvolve aplicativos para organizar o dia a dia doméstico
-    com menos esforço e menos desperdício.
-  </p>
-
-  <h2>Produtos</h2>
-  {
-    apps.map((app) => (
-      <div class="card">
-        <span class="tag">{app.selo}</span>
-        <h3><a href={`${app.slug}/`}>{app.nome}</a></h3>
-        <p>{app.resumo}</p>
-        <p>
-          <a href={`${app.slug}/`}>Conhecer o app</a> · <a href={`${app.slug}/${app.legais[0].href}`}>{app.legais[0].rotulo}</a>
-        </p>
+  <section class="hero">
+    <div class="wrap hero-grade">
+      <div>
+      <span class="sobretitulo">EFAB Tecnologia</span>
+      <h1>Aplicativos que simplificam a rotina da casa</h1>
+      <p class="lead">
+        A despensa, o pet, os remédios: coisas que toda casa administra. Criamos apps para Android que cuidam disso
+        com menos esforço e menos desperdício.
+      </p>
+      <div class="botoes">
+        <a class="botao" href="#apps">Conhecer os aplicativos</a>
+        <a class="botao secundario" href="/sobre.html">Saber mais sobre a EFAB</a>
       </div>
-    ))
+      </div>
+      <ul class="mosaico" aria-hidden="true">
+        {
+          apps.map((app) => (
+            <li data-tema={app.slug}>
+              {app.simbolo ? <img src={`/logos/${app.slug}/${app.simbolo}`} alt="" width="64" height="64" /> : <span>{app.nome[0]}</span>}
+              <strong>{app.nome}</strong>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" id="apps" aria-labelledby="titulo-apps">
+    <div class="wrap">
+      <div class="secao-cabeca">
+        <span class="sobretitulo">Aplicativos</span>
+        <h2 id="titulo-apps">Um app para cada parte da casa</h2>
+      </div>
+      <div class="grade-apps">
+        {apps.map((app) => <CartaoApp app={app} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="titulo-principios">
+    <div class="wrap">
+      <div class="secao-cabeca">
+        <span class="sobretitulo">Como trabalhamos</span>
+        <h2 id="titulo-principios">O que vale em todos os nossos apps</h2>
+      </div>
+      <ul class="grade-principios">
+        {
+          principios.map((p) => (
+            <li>
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                <path d={p.icone} />
+              </svg>
+              <h3>{p.titulo}</h3>
+              <p>{p.texto}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" id="contato" aria-labelledby="titulo-contato">
+    <div class="wrap">
+      <div class="contato">
+        <div>
+          <span class="sobretitulo">Contato</span>
+          <h2 id="titulo-contato">Fale com a gente</h2>
+          <p>Dúvidas, sugestões, problemas com um app ou parcerias: respondemos por e-mail.</p>
+        </div>
+        <a class="botao" href={`mailto:${efab.email}`}>Escrever um e-mail</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding: 64px 0 56px;
+    background:
+      radial-gradient(60% 80% at 100% 0%, var(--marca-suave), transparent 70%),
+      var(--fundo);
   }
 
-  <h2 id="contato">Contato</h2>
-  <p>E-mail: <a href={`mailto:${efab.email}`}>{efab.email}</a></p>
-</Layout>
+  .hero h1 {
+    max-width: 16ch;
+    font-size: clamp(2.3rem, 7vw, 3.6rem);
+    letter-spacing: -0.02em;
+  }
+
+  .hero .lead {
+    max-width: 56ch;
+    margin-bottom: 0;
+  }
+
+  .hero-grade {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .mosaico {
+    display: none;
+  }
+
+  @media (min-width: 920px) {
+    .hero-grade {
+      grid-template-columns: 1.4fr 1fr;
+    }
+
+    .mosaico {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mosaico li {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0;
+      padding: 22px;
+      border-radius: var(--raio-lg);
+      background: var(--marca-suave);
+      color: var(--tinta);
+      font-family: var(--fonte-titulo);
+      font-size: 1.25rem;
+      box-shadow: var(--sombra-cartao);
+    }
+
+    .mosaico li:first-child {
+      grid-row: span 2;
+      justify-content: flex-end;
+    }
+
+    .mosaico img,
+    .mosaico span {
+      width: 64px;
+      height: 64px;
+    }
+
+    .mosaico span {
+      display: grid;
+      place-items: center;
+      border-radius: var(--raio-md);
+      background: var(--marca-fundo);
+      color: var(--sobre-marca);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  .secao-cabeca {
+    margin-bottom: 28px;
+  }
+
+  .grade-apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .grade-principios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .grade-principios li {
+    margin: 0;
+  }
+
+  .grade-principios svg {
+    fill: none;
+    stroke: var(--marca);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .grade-principios h3 {
+    margin: 10px 0 4px;
+  }
+
+  .grade-principios p {
+    margin: 0;
+    color: var(--tinta-suave);
+  }
+
+  .contato {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 32px;
+    padding: 28px;
+    border-radius: var(--raio-lg);
+    background: var(--marca-suave);
+  }
+
+  .contato h2 {
+    margin-top: 0;
+  }
+
+  .contato p {
+    margin: 0;
+  }
+</style>
