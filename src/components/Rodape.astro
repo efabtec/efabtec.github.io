@@ -1,10 +1,29 @@
 ---
 import { efab } from "../data/efab";
+import { apps } from "../data/apps";
 ---
 
 <footer class="rodape">
   <div class="wrap">
-    <p>{efab.nome} · {efab.razaoSocial} · CNPJ {efab.cnpj}</p>
-    <p>{efab.cidade} · <a href={`mailto:${efab.email}`}>{efab.email}</a></p>
+    <div class="rodape-colunas">
+      <div>
+        <p class="rodape-marca">EFAB <span>Tecnologia</span></p>
+        <p>Aplicativos que simplificam a rotina da casa.</p>
+      </div>
+      <nav aria-label="Aplicativos">
+        <p class="rodape-titulo">Aplicativos</p>
+        <ul>
+          {apps.map((a) => <li><a href={`/${a.slug}/`}>{a.nome}</a></li>)}
+        </ul>
+      </nav>
+      <nav aria-label="Empresa">
+        <p class="rodape-titulo">Empresa</p>
+        <ul>
+          <li><a href="/sobre.html">Sobre a EFAB</a></li>
+          <li><a href={`mailto:${efab.email}`}>{efab.email}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="rodape-legal">{efab.nome} · {efab.razaoSocial} · CNPJ {efab.cnpj} · {efab.cidade}</p>
   </div>
 </footer>

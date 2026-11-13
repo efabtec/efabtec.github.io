@@ -11,6 +11,7 @@ publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decis
 | Página | URL |
 |---|---|
 | Site da empresa | https://efabtec.github.io/ |
+| Sobre a EFAB | https://efabtec.github.io/sobre.html |
 | SmartDespensa | https://efabtec.github.io/smartdespensa/ |
 | Política de privacidade do SmartDespensa | https://efabtec.github.io/smartdespensa/privacidade.html |
 | Exclusão de conta | https://efabtec.github.io/smartdespensa/excluir-conta.html |
@@ -41,7 +42,7 @@ npm run preview   # serve o dist/
 | `src/layouts/` | `Base` (head e SEO), `Efab`, `App` e um layout por app em `apps/`, que carrega o tema e as fontes dele. |
 | `src/themes/tokens/` | Cópia do `docs/design-system/tokens.json` de cada app. |
 | `src/themes/gerado/` | CSS dos temas, gerado por `npm run tokens`. Não edite à mão. |
-| `public/` | Arquivos servidos como estão: logos, `robots.txt` e a verificação do Search Console. |
+| `public/` | Arquivos servidos como estão: logos dos apps, `favicon.svg` da EFAB, `robots.txt` e a verificação do Search Console. |
 
 ## Temas
 
@@ -54,6 +55,8 @@ clones irmãos (`../SmartDespensa`, `../farmacinha`, `../daisy`) e regera o CSS.
 repositórios dos apps, que são privados: o resultado é commitado aqui.
 
 ## Manutenção
+
+- Os princípios da home ("sem anúncios", "comece sem cadastro"...) valem para os três apps hoje. Se um app passar a ter anúncios ou exigir conta, revise `src/pages/index.astro`.
 
 - **Não mude os caminhos das URLs da tabela.** Estão nos apps (Configurações da Farmacinha,
   `URL_POLITICA_PRIVACIDADE` do Daisy), na Play Console e no Search Console.

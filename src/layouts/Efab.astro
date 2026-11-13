@@ -4,23 +4,26 @@ import "../themes/gerado/efab.css";
 import Base from "./Base.astro";
 import Cabecalho from "../components/Cabecalho.astro";
 import Rodape from "../components/Rodape.astro";
-import { apps } from "../data/apps";
 
 interface Props {
   titulo: string;
   descricao?: string;
+  /** href da página atual no menu. */
+  atual?: string;
 }
 
-const { titulo, descricao } = Astro.props;
-const links = [...apps.map((a) => ({ rotulo: a.nome, href: `/${a.slug}/` })), { rotulo: "Contato", href: "/#contato" }];
+const { titulo, descricao, atual } = Astro.props;
+const links = [
+  { rotulo: "Aplicativos", href: "/#apps" },
+  { rotulo: "Sobre", href: "/sobre.html" },
+  { rotulo: "Contato", href: "/#contato" },
+];
 ---
 
-<Base titulo={titulo} descricao={descricao} tema="efab">
-  <Cabecalho nome="EFAB" sobrenome="Tecnologia" href="/" links={links} />
-  <main class="conteudo">
-    <div class="wrap estreito">
-      <slot />
-    </div>
+<Base titulo={titulo} descricao={descricao} tema="efab" favicon="/favicon.svg">
+  <Cabecalho nome="EFAB" sobrenome="Tecnologia" href="/" links={links} atual={atual} />
+  <main>
+    <slot />
   </main>
   <Rodape />
 </Base>

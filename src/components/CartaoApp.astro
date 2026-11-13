@@ -1,0 +1,141 @@
+---
+// Cartão de um app no hub, com o tema dele (data-tema): cores e fontes do design system do app.
+import type { App } from "../data/tipos";
+import { rotuloStatus } from "../data/status";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+---
+
+<article class="cartao-app" data-tema={app.slug}>
+  <div class="cartao-app-topo">
+    {
+      app.simbolo ? (
+        <img src={`/logos/${app.slug}/${app.simbolo}`} alt="" width="56" height="56" />
+      ) : (
+        <span class="monograma" aria-hidden="true">{app.nome[0]}</span>
+      )
+    }
+    <span class="cartao-app-status">{rotuloStatus[app.status]}</span>
+  </div>
+  <div class="cartao-app-corpo">
+    <h3><a href={`/${app.slug}/`}>{app.nome}</a></h3>
+    <p>{app.resumo}</p>
+    <p class="cartao-app-acao" aria-hidden="true">Conhecer o app <span>→</span></p>
+  </div>
+</article>
+
+<style>
+  .cartao-app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--superficie);
+    color: var(--tinta);
+    font-family: var(--fonte-texto);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio-lg);
+    box-shadow: var(--sombra-cartao);
+    overflow: hidden;
+    transition: transform 0.15s ease;
+  }
+
+  .cartao-app:hover {
+    transform: translateY(-2px);
+  }
+
+  .cartao-app:focus-within {
+    outline: 3px solid var(--marca);
+    outline-offset: 2px;
+  }
+
+  .cartao-app-topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px 22px 18px;
+    background: var(--marca-suave);
+  }
+
+  .cartao-app-topo img,
+  .monograma {
+    width: 56px;
+    height: 56px;
+  }
+
+  .monograma {
+    display: grid;
+    place-items: center;
+    border-radius: var(--raio-md);
+    background: var(--marca-fundo);
+    color: var(--sobre-marca);
+    font: 700 1.8rem/1 var(--fonte-titulo);
+  }
+
+  .cartao-app-status {
+    background: var(--superficie);
+    color: var(--tinta);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .cartao-app-corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 4px 22px 22px;
+  }
+
+  .cartao-app h3 {
+    font-size: 1.5rem;
+    margin: 16px 0 6px;
+  }
+
+  /* O link do título cobre o cartão inteiro. */
+  .cartao-app h3 a {
+    color: var(--tinta);
+    text-decoration: none;
+  }
+
+  .cartao-app h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .cartao-app h3 a:focus-visible {
+    outline: none;
+  }
+
+  .cartao-app p {
+    margin: 0 0 16px;
+    color: var(--tinta-suave);
+  }
+
+  .cartao-app .cartao-app-acao {
+    margin: auto 0 0;
+    color: var(--marca);
+    font-weight: 700;
+  }
+
+  .cartao-app-acao span {
+    display: inline-block;
+    transition: transform 0.15s ease;
+  }
+
+  .cartao-app:hover .cartao-app-acao span {
+    transform: translateX(4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cartao-app,
+    .cartao-app-acao span {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Efab.astro";
+import { apps } from "../data/apps";
+import { efab } from "../data/efab";
+---
+
+<Layout
+  titulo="Sobre a EFAB Tecnologia"
+  descricao="Quem é a EFAB Tecnologia, como criamos nossos aplicativos e como falar com a empresa."
+  atual="/sobre.html"
+>
+  <div class="wrap estreito conteudo">
+    <span class="sobretitulo">Sobre</span>
+    <h1>Sobre a EFAB Tecnologia</h1>
+    <p class="lead">
+      A EFAB Tecnologia é uma empresa de {efab.cidade} que desenvolve aplicativos para organizar a rotina da casa.
+    </p>
+
+    <h2>O que fazemos</h2>
+    <p>
+      Cada app cuida de uma parte da casa que dá trabalho para acompanhar: o que tem na despensa e quando vence,
+      as vacinas e os remédios do pet, os remédios guardados no armário. A ideia é a mesma em todos: registrar uma
+      vez e receber o aviso na hora certa.
+    </p>
+    <ul>
+      {
+        apps.map((a) => (
+          <li>
+            <a href={`/${a.slug}/`}>{a.nome}</a>: {a.resumo}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2>Como trabalhamos</h2>
+    <ul>
+      <li>
+        <strong>Privacidade por padrão.</strong> Sempre que possível, seus dados ficam no seu aparelho. O que vai para
+        a nuvem, e por quê, está na política de privacidade de cada app.
+      </li>
+      <li>
+        <strong>Sem anúncios.</strong> Os apps se sustentam por uma assinatura Premium opcional, cobrada pela Google
+        Play, que você cancela quando quiser.
+      </li>
+      <li>
+        <strong>Sem promessas além do app.</strong> Nossos apps organizam o que você registra. Eles não dão orientação
+        médica, veterinária ou nutricional.
+      </li>
+      <li><strong>Suporte de verdade.</strong> Quem responde o e-mail é quem faz os apps.</li>
+    </ul>
+
+    <h2>Dados da empresa</h2>
+    <div class="table-scroll">
+      <table class="dados">
+        <tbody>
+          <tr><th scope="row">Nome</th><td>{efab.nome}</td></tr>
+          <tr><th scope="row">Razão social</th><td>{efab.razaoSocial}</td></tr>
+          <tr><th scope="row">CNPJ</th><td>{efab.cnpj}</td></tr>
+          <tr><th scope="row">Sede</th><td>{efab.cidade}</td></tr>
+          <tr><th scope="row">Contato</th><td><a href={`mailto:${efab.email}`}>{efab.email}</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Fale com a gente</h2>
+    <p>Dúvidas, sugestões, problemas com um app, imprensa ou parcerias: escreva para nós.</p>
+    <div class="botoes">
+      <a class="botao" href={`mailto:${efab.email}`}>Escrever um e-mail</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .dados {
+    min-width: 0;
+  }
+
+  .dados th {
+    width: 34%;
+  }
+</style>

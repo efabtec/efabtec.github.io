@@ -239,26 +239,131 @@ th {
 /* Conteúdo */
 
 .conteudo {
-  padding: 40px 0 64px;
+  padding-block: 40px 64px;
+}
+
+/* Botões: verbo no início do rótulo. */
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 0;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--marca-fundo);
+  background: var(--marca-fundo);
+  color: var(--sobre-marca);
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.botao:hover {
+  filter: brightness(1.06);
+}
+
+.botao.secundario {
+  background: transparent;
+  border-color: var(--linha-forte);
+  color: var(--tinta);
+}
+
+.botao.secundario:hover {
+  border-color: var(--tinta);
+  filter: none;
+}
+
+/* Seções */
+
+.secao {
+  padding: 56px 0;
+}
+
+.secao + .secao {
+  border-top: 1px solid var(--linha);
+}
+
+.secao > .wrap > h2:first-child,
+.secao-cabeca h2 {
+  margin-top: 0;
+}
+
+.sobretitulo {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--marca);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Rodapé */
 
 .rodape {
   border-top: 1px solid var(--linha);
+  background: var(--superficie-recuada);
   color: var(--tinta-suave);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .rodape .wrap {
-  padding-top: 24px;
+  padding-top: 40px;
   padding-bottom: 32px;
+}
+
+.rodape-colunas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px 40px;
 }
 
 .rodape p {
   margin: 4px 0;
 }
 
+.rodape ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .rodape a {
   color: var(--tinta-suave);
+}
+
+.rodape a:hover {
+  color: var(--tinta);
+}
+
+.rodape-marca {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--tinta);
+}
+
+.rodape-marca span {
+  color: var(--marca);
+}
+
+.rodape-titulo {
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.rodape .rodape-legal {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--linha);
+  font-size: 0.85rem;
 }

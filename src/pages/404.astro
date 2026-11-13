@@ -1,9 +1,29 @@
 ---
 import Layout from "../layouts/Efab.astro";
+import { apps } from "../data/apps";
 ---
 
 <Layout titulo="Página não encontrada · EFAB Tecnologia">
-  <h1>Página não encontrada</h1>
-  <p class="lead">O endereço que você abriu não existe.</p>
-  <p><a href="/">Voltar para a EFAB Tecnologia</a></p>
+  <div class="wrap estreito conteudo">
+    <p class="codigo" aria-hidden="true">404</p>
+    <h1>Página não encontrada</h1>
+    <p class="lead">O endereço que você abriu não existe ou mudou de lugar.</p>
+    <div class="botoes">
+      <a class="botao" href="/">Voltar para a EFAB Tecnologia</a>
+    </div>
+    <h2>Talvez você procure</h2>
+    <ul>
+      {apps.map((a) => <li><a href={`/${a.slug}/`}>{a.nome}</a></li>)}
+      <li><a href="/sobre.html">Sobre a EFAB</a></li>
+    </ul>
+  </div>
 </Layout>
+
+<style>
+  .codigo {
+    margin: 0;
+    font: 800 clamp(4rem, 18vw, 7rem) / 1 var(--fonte-titulo);
+    color: var(--marca);
+    letter-spacing: -0.04em;
+  }
+</style>
