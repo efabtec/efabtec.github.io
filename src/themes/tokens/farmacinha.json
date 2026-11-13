@@ -1,0 +1,90 @@
+{
+  "name": "Farmacinha",
+  "version": 1,
+  "color": {
+    "themes": [
+      { "id": "light", "name": "Claro" },
+      { "id": "dark", "name": "Escuro" }
+    ],
+    "tokens": [
+      { "name": "surface", "value": { "light": "#fbf8f3", "dark": "#121816" }, "usage": "Fundo das telas: o creme da marca no claro, verde quase preto no escuro." },
+      { "name": "surface-raised", "value": { "light": "#ffffff", "dark": "#1b2320" }, "usage": "Cartões de remédio, folhas inferiores, diálogos e campos." },
+      { "name": "surface-sunken", "value": { "light": "#f2ede4", "dark": "#0d1210" }, "usage": "Áreas recuadas: barra de busca, fundo de listas agrupadas, trilho do seletor." },
+      { "name": "line", "value": { "light": "#e3dcd0", "dark": "#2c3633" }, "usage": "Divisórias e contornos decorativos de cartões. Nunca como única borda de um controle." },
+      { "name": "line-strong", "value": { "light": "#808b86", "dark": "#6b7773" }, "usage": "Borda de campos, chips não selecionados e outros controles: 3:1 sobre surface e surface-raised nos dois temas." },
+      { "name": "ink", "value": { "light": "#1d2724", "dark": "#eef2ef" }, "usage": "Texto principal e ícones, sobre surface, surface-raised e surface-sunken." },
+      { "name": "ink-muted", "value": { "light": "#56625e", "dark": "#a5b0ac" }, "usage": "Texto secundário: princípio ativo, local, legendas. Legível sobre as três superfícies nos dois temas." },
+      { "name": "brand", "value": { "light": "#0e6b5a", "dark": "#5fcbb1" }, "usage": "Verde-azulado da marca: ação principal, estado ativo, links. Como texto, sobre as superfícies ou brand-soft." },
+      { "name": "brand-soft", "value": { "light": "#ddf0ea", "dark": "#143a31" }, "usage": "Fundo tingido atrás de texto brand: chip selecionado, destaque de seção." },
+      { "name": "on-brand", "value": { "light": "#ffffff", "dark": "#0b1f1a" }, "usage": "Texto e ícones sobre preenchimento brand (rótulo do botão principal). Nunca branco fixo." },
+      { "name": "coral", "value": { "light": "#ee7b5e", "dark": "#f2917a" }, "usage": "Coral da cápsula: só preenchimento decorativo (pingo do i, ilustrações, cápsula do símbolo). Nunca texto no tema claro." },
+      { "name": "coral-ink", "value": { "light": "#a9452b", "dark": "#f5a792" }, "usage": "Coral como texto, quando a marca precisa de calor: sobre as superfícies ou coral-soft." },
+      { "name": "coral-soft", "value": { "light": "#fde7df", "dark": "#4a2419" }, "usage": "Fundo tingido atrás de coral-ink: dicas, onboarding." },
+      { "name": "status-ok", "value": "{brand}", "usage": "Validade em dia. Sempre com a palavra (\"Em dia\") ou o ícone de check, nunca só a cor." },
+      { "name": "status-ok-soft", "value": "{brand-soft}", "usage": "Fundo do selo de validade em dia." },
+      { "name": "status-warn", "value": { "light": "#8a4b00", "dark": "#f5c26b" }, "usage": "Vence em breve (até 30 dias). Texto sobre status-warn-soft ou as superfícies; sempre com a data." },
+      { "name": "status-warn-soft", "value": { "light": "#fcebc8", "dark": "#3d2a0c" }, "usage": "Fundo do selo \"Vence em breve\"." },
+      { "name": "status-expired", "value": { "light": "#a3261b", "dark": "#ff9c90" }, "usage": "Vencido e erros. Texto sobre status-expired-soft ou as superfícies; sempre com a palavra \"Vencido\" e o ícone." },
+      { "name": "status-expired-soft", "value": { "light": "#fbe1de", "dark": "#451a16" }, "usage": "Fundo do selo \"Vencido\" e de mensagens de erro." },
+      { "name": "focus", "value": { "light": "#0e6b5a", "dark": "#5fcbb1" }, "usage": "Anel de foco: 2px sólido, afastado 2px do controle. Pelo menos 3:1 sobre todas as superfícies." },
+      { "name": "scrim", "value": { "light": "rgba(29, 39, 36, 0.48)", "dark": "rgba(0, 0, 0, 0.6)" }, "usage": "Véu atrás de folhas inferiores e diálogos." }
+    ]
+  },
+  "type": {
+    "fonts": [],
+    "families": {
+      "display": "\"Bricolage Grotesque\", \"Figtree\", system-ui, sans-serif",
+      "sans": "\"Figtree\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    },
+    "groups": [
+      {
+        "name": "Títulos",
+        "family": "display",
+        "note": "Bricolage Grotesque (Google Fonts), só em títulos de tela e números grandes.",
+        "styles": [
+          { "name": "display", "fontSize": "32px", "lineHeight": "38px", "fontWeight": 700, "letterSpacing": "-0.02em", "sample": "Sua farmacinha", "usage": "Título da tela inicial e telas vazias. Uma vez por tela." },
+          { "name": "title", "fontSize": "24px", "lineHeight": "30px", "fontWeight": 700, "letterSpacing": "-0.01em", "sample": "Vence este mês", "usage": "Título de tela e de folha inferior." },
+          { "name": "numeral", "fontSize": "28px", "lineHeight": "32px", "fontWeight": 600, "sample": "12 remédios", "usage": "Contagens em destaque no painel (itens, vencendo, vencidos)." }
+        ]
+      },
+      {
+        "name": "Texto",
+        "family": "sans",
+        "note": "Figtree (Google Fonts) em todo o restante da interface.",
+        "styles": [
+          { "name": "heading", "fontSize": "18px", "lineHeight": "24px", "fontWeight": 600, "sample": "Gaveta do banheiro", "usage": "Nome do remédio no cartão e cabeçalho de seção." },
+          { "name": "body", "fontSize": "16px", "lineHeight": "24px", "fontWeight": 400, "sample": "Escaneie o código de barras da caixa.", "usage": "Texto corrido e campos." },
+          { "name": "body-strong", "fontSize": "16px", "lineHeight": "24px", "fontWeight": 600, "sample": "Validade: mar/2027", "usage": "Ênfase dentro de texto corrido." },
+          { "name": "label", "fontSize": "14px", "lineHeight": "20px", "fontWeight": 600, "letterSpacing": "0.01em", "sample": "Adicionar remédio", "usage": "Botões, chips e abas." },
+          { "name": "caption", "fontSize": "13px", "lineHeight": "18px", "fontWeight": 500, "sample": "Dipirona monoidratada · 500 mg", "usage": "Princípio ativo, local, metadados. Em ink-muted." },
+          { "name": "badge", "fontSize": "12px", "lineHeight": "16px", "fontWeight": 700, "letterSpacing": "0.02em", "sample": "Vence em breve", "usage": "Selos de validade." }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "tokens": [
+      { "name": "space-1", "value": "4px", "usage": "Entre ícone e rótulo dentro de selos." },
+      { "name": "space-2", "value": "8px", "usage": "Entre chips; entre linhas de metadados no cartão." },
+      { "name": "space-3", "value": "12px", "usage": "Padding vertical do cartão; entre ícone e texto em botões." },
+      { "name": "space-4", "value": "16px", "usage": "Margem lateral das telas e padding horizontal do cartão." },
+      { "name": "space-6", "value": "24px", "usage": "Entre blocos de uma tela." },
+      { "name": "space-8", "value": "32px", "usage": "Antes de títulos de seção e no topo de telas vazias." },
+      { "name": "space-12", "value": "48px", "usage": "Altura mínima de toque (48dp no Android)." }
+    ]
+  },
+  "radius": {
+    "tokens": [
+      { "name": "radius-sm", "value": "8px", "usage": "Selos de validade e campos pequenos." },
+      { "name": "radius-md", "value": "14px", "usage": "Botões, campos e cartões de remédio: o mesmo canto do armarinho do símbolo." },
+      { "name": "radius-lg", "value": "24px", "usage": "Folhas inferiores e cartões de destaque do painel." },
+      { "name": "radius-pill", "value": "999px", "usage": "Chips de filtro, botão de escanear e a cápsula: sempre com pontas totalmente redondas." }
+    ]
+  },
+  "shadow": {
+    "tokens": [
+      { "name": "shadow-card", "value": { "light": "0 1px 2px rgba(29, 39, 36, 0.06), 0 2px 8px rgba(29, 39, 36, 0.06)", "dark": "none" }, "usage": "Cartões sobre surface no claro; no escuro a separação vem de surface-raised." },
+      { "name": "shadow-sheet", "value": { "light": "0 -4px 24px rgba(29, 39, 36, 0.12)", "dark": "0 -4px 24px rgba(0, 0, 0, 0.4)" }, "usage": "Folha inferior e botão flutuante de escanear." }
+    ]
+  }
+}

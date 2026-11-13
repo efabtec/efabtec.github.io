@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562 96" width="562" height="96" role="img" aria-label="Farmacinha">
+<title>Farmacinha</title>
+<g transform="translate(0 4) scale(1.375)">
+  <defs><clipPath id="ln-cap"><rect x="18" y="25" width="28" height="14" rx="7"/></clipPath></defs>
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="#5FCBB1"/>
+  <rect x="6" y="30.5" width="52" height="3" fill="#121816"/>
+  <rect x="15.5" y="22.5" width="33" height="19" rx="9.5" fill="#5FCBB1"/>
+  <g clip-path="url(#ln-cap)">
+    <rect x="18" y="25" width="14" height="14" fill="#EE7B5E"/>
+    <rect x="32" y="25" width="14" height="14" fill="#121816"/>
+  </g>
+</g><g transform="translate(105.5 4)">
+  <path d="M18 75.5V30A13.5 13.5 0 0 1 31.5 16.5H36M9 44.5H33.5M50.5 60.0A15.5 15.5 0 1 0 81.5 60.0A15.5 15.5 0 1 0 50.5 60.0ZM81.5 44.5V75.5M99.5 75.5V44.5M99.5 60.0A15.5 15.5 0 0 1 115.0 44.5M130 75.5V44.5M130 56.5A12 12 0 0 1 154 56.5V75.5M154 56.5A12 12 0 0 1 178 56.5V75.5M196.0 60.0A15.5 15.5 0 1 0 227.0 60.0A15.5 15.5 0 1 0 196.0 60.0ZM227.0 44.5V75.5M271.46 49.04A15.5 15.5 0 1 0 271.46 70.96000000000001M289.5 44.5V75.5M307.5 44.5V75.5M307.5 60.0A15.5 15.5 0 0 1 338.5 60.0V75.5M356.5 16.5V75.5M356.5 60.0A15.5 15.5 0 0 1 387.5 60.0V75.5M405.5 60.0A15.5 15.5 0 1 0 436.5 60.0A15.5 15.5 0 1 0 405.5 60.0ZM436.5 44.5V75.5" fill="none" stroke="#FBF8F3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="289.5" cy="27" r="6" fill="#EE7B5E"/>
+</g>
+</svg>

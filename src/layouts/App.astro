@@ -1,0 +1,33 @@
+---
+// Layout comum das páginas de um app. Não use direto: use o layout do app em layouts/apps/,
+// que carrega o tema e as fontes dele.
+import Base from "./Base.astro";
+import Cabecalho from "../components/Cabecalho.astro";
+import Rodape from "../components/Rodape.astro";
+import type { App } from "../data/tipos";
+
+export interface Props {
+  app: App;
+  titulo: string;
+  descricao?: string;
+  noindex?: boolean;
+  /** Caminho da página dentro do app ("./", "privacidade.html"...), para marcar no menu. */
+  pagina: string;
+}
+
+const { app, titulo, descricao, noindex, pagina } = Astro.props;
+const simbolo = app.simbolo ? `/logos/${app.slug}/${app.simbolo}` : undefined;
+const links = [
+  { rotulo: "Início", href: "./" },
+  ...app.legais.map((l) => ({ rotulo: l.curto, href: l.href })),
+  { rotulo: "EFAB", href: "/" },
+];
+---
+
+<Base titulo={titulo} descricao={descricao} tema={app.slug} noindex={noindex} favicon={simbolo}>
+  <Cabecalho nome={app.nome} href="./" simbolo={simbolo} links={links} atual={pagina} />
+  <main class="conteudo">
+    <slot />
+  </main>
+  <Rodape />
+</Base>

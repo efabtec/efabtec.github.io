@@ -1,0 +1,26 @@
+---
+import "@fontsource-variable/figtree";
+import "../themes/gerado/efab.css";
+import Base from "./Base.astro";
+import Cabecalho from "../components/Cabecalho.astro";
+import Rodape from "../components/Rodape.astro";
+import { apps } from "../data/apps";
+
+interface Props {
+  titulo: string;
+  descricao?: string;
+}
+
+const { titulo, descricao } = Astro.props;
+const links = [...apps.map((a) => ({ rotulo: a.nome, href: `/${a.slug}/` })), { rotulo: "Contato", href: "/#contato" }];
+---
+
+<Base titulo={titulo} descricao={descricao} tema="efab">
+  <Cabecalho nome="EFAB" sobrenome="Tecnologia" href="/" links={links} />
+  <main class="conteudo">
+    <div class="wrap estreito">
+      <slot />
+    </div>
+  </main>
+  <Rodape />
+</Base>

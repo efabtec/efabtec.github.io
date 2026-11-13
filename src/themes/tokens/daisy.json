@@ -1,0 +1,419 @@
+{
+  "name": "Daisy",
+  "version": 1,
+  "color": {
+    "themes": [
+      {
+        "id": "light",
+        "name": "Claro"
+      },
+      {
+        "id": "dark",
+        "name": "Escuro"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "surface",
+        "value": {
+          "light": "#fff8f0",
+          "dark": "#17120f"
+        },
+        "usage": "Fundo das telas: creme quente no claro, marrom quase preto no escuro."
+      },
+      {
+        "name": "surface-raised",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#211a16"
+        },
+        "usage": "Cartões de registro, perfil do pet, folhas inferiores, diálogos e campos."
+      },
+      {
+        "name": "surface-sunken",
+        "value": {
+          "light": "#f8ede0",
+          "dark": "#110d0b"
+        },
+        "usage": "Áreas recuadas: busca, fundo de listas agrupadas, trilho do seletor de pets."
+      },
+      {
+        "name": "line",
+        "value": {
+          "light": "#ebddcc",
+          "dark": "#3a2f28"
+        },
+        "usage": "Divisórias e contornos decorativos. Nunca como única borda de um controle."
+      },
+      {
+        "name": "line-strong",
+        "value": {
+          "light": "#8c7d70",
+          "dark": "#7d6e63"
+        },
+        "usage": "Borda de campos, chips não selecionados e controles: acima de 3:1 sobre surface e surface-raised nos dois temas."
+      },
+      {
+        "name": "ink",
+        "value": {
+          "light": "#2a1f1a",
+          "dark": "#f6eee7"
+        },
+        "usage": "Texto principal e ícones, sobre as três superfícies, orange-soft e tip-soft."
+      },
+      {
+        "name": "ink-muted",
+        "value": {
+          "light": "#6b5a4e",
+          "dark": "#bfae9f"
+        },
+        "usage": "Texto secundário: produto, lote, veterinário, legendas. Legível sobre as três superfícies nos dois temas."
+      },
+      {
+        "name": "orange",
+        "value": {
+          "light": "#f2600f",
+          "dark": "#ff7a2e"
+        },
+        "usage": "Laranja Daisy, forte como a pelagem da gata: preenchimento do botão principal, símbolo, ilustrações e destaques. No tema claro nunca é texto; o texto sobre ele é on-orange."
+      },
+      {
+        "name": "on-orange",
+        "value": {
+          "light": "#2a1406",
+          "dark": "#2a1406"
+        },
+        "usage": "Texto e ícones sobre preenchimento orange (rótulo do botão principal): marrom escuro, nunca branco."
+      },
+      {
+        "name": "orange-ink",
+        "value": {
+          "light": "#a93d06",
+          "dark": "#ffb080"
+        },
+        "usage": "Laranja como texto: links, ação de texto, item ativo. Sobre as superfícies ou orange-soft."
+      },
+      {
+        "name": "orange-soft",
+        "value": {
+          "light": "#ffe3cf",
+          "dark": "#4d230a"
+        },
+        "usage": "Fundo tingido: pet selecionado, destaque de seção, atrás de orange-ink."
+      },
+      {
+        "name": "orange-deep",
+        "value": {
+          "light": "#b8440a",
+          "dark": "#b8440a"
+        },
+        "usage": "Laranja queimado das listras de gata rajada: listras e miolo das orelhas no símbolo e em ilustrações. Só decoração, nunca texto."
+      },
+      {
+        "name": "tip-soft",
+        "value": {
+          "light": "#fff1c7",
+          "dark": "#3d3010"
+        },
+        "usage": "Fundo de dicas e do onboarding, com texto ink."
+      },
+      {
+        "name": "status-ok",
+        "value": {
+          "light": "#2b7350",
+          "dark": "#7fd3a8"
+        },
+        "usage": "Em dia. Sempre com a palavra \"Em dia\" e o ícone de check."
+      },
+      {
+        "name": "status-ok-soft",
+        "value": {
+          "light": "#ddf1e6",
+          "dark": "#163b29"
+        },
+        "usage": "Fundo do selo \"Em dia\"."
+      },
+      {
+        "name": "status-soon",
+        "value": {
+          "light": "#3949ab",
+          "dark": "#aeb9ff"
+        },
+        "usage": "Próxima dose em até 30 dias. Azul para não se confundir com o laranja da marca; sempre com a data e o ícone de relógio."
+      },
+      {
+        "name": "status-soon-soft",
+        "value": {
+          "light": "#e4e8fb",
+          "dark": "#232b55"
+        },
+        "usage": "Fundo do selo \"Em breve\"."
+      },
+      {
+        "name": "status-late",
+        "value": {
+          "light": "#b3261e",
+          "dark": "#ff9c90"
+        },
+        "usage": "Dose atrasada e erros. Sempre com a palavra \"Atrasada\" e o ícone de alerta."
+      },
+      {
+        "name": "status-late-soft",
+        "value": {
+          "light": "#fce3e0",
+          "dark": "#4a1a16"
+        },
+        "usage": "Fundo do selo \"Atrasada\" e de mensagens de erro."
+      },
+      {
+        "name": "focus",
+        "value": "{orange-ink}",
+        "usage": "Anel de foco: 2px sólido, afastado 2px do controle. Acima de 3:1 sobre todas as superfícies."
+      },
+      {
+        "name": "scrim",
+        "value": {
+          "light": "rgba(42, 31, 26, 0.48)",
+          "dark": "rgba(0, 0, 0, 0.6)"
+        },
+        "usage": "Véu atrás de folhas inferiores e diálogos."
+      }
+    ]
+  },
+  "type": {
+    "fonts": [],
+    "families": {
+      "display": "\"Fraunces\", Georgia, serif",
+      "sans": "\"Figtree\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    },
+    "groups": [
+      {
+        "name": "Títulos",
+        "family": "display",
+        "note": "Fraunces (Google Fonts), serifa macia e calorosa, só em títulos e no nome do pet.",
+        "styles": [
+          {
+            "name": "display",
+            "fontSize": "32px",
+            "lineHeight": "38px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.01em",
+            "sample": "Oi, Daisy",
+            "usage": "Nome do pet no topo do perfil e telas vazias. Uma vez por tela."
+          },
+          {
+            "name": "title",
+            "fontSize": "24px",
+            "lineHeight": "30px",
+            "fontWeight": 600,
+            "sample": "Próximos cuidados",
+            "usage": "Título de tela e de folha inferior."
+          },
+          {
+            "name": "numeral",
+            "fontSize": "28px",
+            "lineHeight": "32px",
+            "fontWeight": 600,
+            "sample": "4,2 kg",
+            "usage": "Peso atual e contagens em destaque."
+          }
+        ]
+      },
+      {
+        "name": "Texto",
+        "family": "sans",
+        "note": "Figtree (Google Fonts) no restante da interface, a mesma da Farmacinha.",
+        "styles": [
+          {
+            "name": "bar-title",
+            "fontSize": "22px",
+            "lineHeight": "28px",
+            "fontWeight": 600,
+            "sample": "Alertas",
+            "usage": "Título da barra superior das telas."
+          },
+          {
+            "name": "heading",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "fontWeight": 600,
+            "sample": "Vacina antirrábica",
+            "usage": "Nome do registro no cartão e cabeçalho de seção."
+          },
+          {
+            "name": "body",
+            "fontSize": "16px",
+            "lineHeight": "24px",
+            "fontWeight": 400,
+            "sample": "Fotografe a página da carteirinha.",
+            "usage": "Texto corrido e campos."
+          },
+          {
+            "name": "body-strong",
+            "fontSize": "16px",
+            "lineHeight": "24px",
+            "fontWeight": 600,
+            "sample": "Próxima dose: 12/mar/2027",
+            "usage": "Ênfase dentro de texto corrido."
+          },
+          {
+            "name": "body-compact",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "sample": "O aviso chega às 9h.",
+            "usage": "Texto de apoio: explicações de preferências e avisos sobre a câmera."
+          },
+          {
+            "name": "label",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 600,
+            "letterSpacing": "0.01em",
+            "sample": "Adicionar registro",
+            "usage": "Botões, chips e abas."
+          },
+          {
+            "name": "caption",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 500,
+            "sample": "Lote 4521B · Dra. Paula Reis",
+            "usage": "Produto, lote, veterinário, metadados. Em ink-muted."
+          },
+          {
+            "name": "badge",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 700,
+            "letterSpacing": "0.02em",
+            "sample": "Em breve",
+            "usage": "Selos de status."
+          }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "tokens": [
+      {
+        "name": "space-1",
+        "value": "4px",
+        "usage": "Entre ícone e rótulo dentro de selos."
+      },
+      {
+        "name": "space-2",
+        "value": "8px",
+        "usage": "Entre chips; entre linhas de metadados no cartão."
+      },
+      {
+        "name": "space-3",
+        "value": "12px",
+        "usage": "Padding vertical do cartão; entre ícone e texto em botões."
+      },
+      {
+        "name": "space-4",
+        "value": "16px",
+        "usage": "Margem lateral das telas e padding horizontal do cartão."
+      },
+      {
+        "name": "space-6",
+        "value": "24px",
+        "usage": "Entre blocos de uma tela."
+      },
+      {
+        "name": "space-8",
+        "value": "32px",
+        "usage": "Antes de títulos de seção e no topo de telas vazias."
+      },
+      {
+        "name": "space-12",
+        "value": "48px",
+        "usage": "Altura mínima de toque (48dp no Android)."
+      }
+    ]
+  },
+  "size": {
+    "tokens": [
+      {
+        "name": "avatar-sm",
+        "value": "32px",
+        "usage": "Avatar do pet dentro do PetChip."
+      },
+      {
+        "name": "avatar-md",
+        "value": "48px",
+        "usage": "Avatar do pet nos cartões da lista de pets."
+      },
+      {
+        "name": "avatar-lg",
+        "value": "96px",
+        "usage": "Avatar do pet no topo do perfil e no formulário."
+      },
+      {
+        "name": "chart-height",
+        "value": "160px",
+        "usage": "Altura da área de desenho da curva de peso."
+      },
+      {
+        "name": "chart-stroke",
+        "value": "2px",
+        "usage": "Espessura da linha da curva de peso."
+      },
+      {
+        "name": "chart-point",
+        "value": "4px",
+        "usage": "Raio do ponto de cada pesagem na curva."
+      },
+      {
+        "name": "border-hairline",
+        "value": "1px",
+        "usage": "Contorno dos cartões e dos chips, na cor line."
+      }
+    ]
+  },
+  "radius": {
+    "tokens": [
+      {
+        "name": "radius-sm",
+        "value": "8px",
+        "usage": "Selos de status e campos pequenos."
+      },
+      {
+        "name": "radius-md",
+        "value": "16px",
+        "usage": "Botões, campos e cartões: o mesmo canto do bloco do símbolo."
+      },
+      {
+        "name": "radius-lg",
+        "value": "28px",
+        "usage": "Folhas inferiores e cartão do perfil do pet."
+      },
+      {
+        "name": "radius-pill",
+        "value": "999px",
+        "usage": "Chips, seletor de pets e botão de fotografar: pontas totalmente redondas, como as listras do símbolo."
+      }
+    ]
+  },
+  "shadow": {
+    "tokens": [
+      {
+        "name": "shadow-card",
+        "value": {
+          "light": "0 1px 2px rgba(42, 31, 26, 0.06), 0 2px 8px rgba(42, 31, 26, 0.06)",
+          "dark": "none"
+        },
+        "usage": "Cartões sobre surface no claro; no escuro a separação vem de surface-raised."
+      },
+      {
+        "name": "shadow-sheet",
+        "value": {
+          "light": "0 -4px 24px rgba(42, 31, 26, 0.12)",
+          "dark": "0 -4px 24px rgba(0, 0, 0, 0.4)"
+        },
+        "usage": "Folha inferior e botão flutuante de fotografar."
+      }
+    ]
+  }
+}

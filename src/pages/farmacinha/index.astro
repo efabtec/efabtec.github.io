@@ -1,0 +1,9 @@
+---
+import Layout from "../../layouts/apps/Farmacinha.astro";
+import PaginaDoApp from "../../components/PaginaDoApp.astro";
+import { farmacinha as app } from "../../data/apps";
+---
+
+<Layout titulo={`${app.nome} · EFAB Tecnologia`} descricao={app.descricao} pagina="./">
+  <PaginaDoApp app={app} />
+</Layout>

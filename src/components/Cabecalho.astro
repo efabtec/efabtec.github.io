@@ -1,0 +1,32 @@
+---
+import type { Link } from "../data/tipos";
+
+interface Props {
+  nome: string;
+  /** Segunda palavra da marca, na cor da marca (como "Tecnologia" em EFAB Tecnologia). */
+  sobrenome?: string;
+  href: string;
+  simbolo?: string;
+  links: Link[];
+  /** href do link da página atual, para marcar no menu. */
+  atual?: string;
+}
+
+const { nome, sobrenome, href, simbolo, links, atual } = Astro.props;
+---
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href={href}>
+      {simbolo && <img src={simbolo} alt="" width="32" height="32" />}
+      <span>{nome}{sobrenome && <> <span class="sobrenome">{sobrenome}</span></>}</span>
+    </a>
+    <nav aria-label="Principal">
+      {links.map((l) => (
+        <a href={l.href} aria-current={l.href === atual ? "page" : undefined}>
+          {l.rotulo}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+---
+import "@fontsource-variable/baloo-2";
+import "@fontsource-variable/nunito-sans";
+import "../../themes/gerado/smartdespensa.css";
+import App, { type Props as PropsDoApp } from "../App.astro";
+import { smartdespensa } from "../../data/apps";
+
+type Props = Omit<PropsDoApp, "app">;
+---
+
+<App app={smartdespensa} {...Astro.props}>
+  <slot />
+</App>

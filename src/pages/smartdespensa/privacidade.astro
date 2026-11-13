@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/apps/SmartDespensa.astro";
+import Legal from "../../components/Legal.astro";
+import html from "../../conteudo/legal/smartdespensa/privacidade.html?raw";
+---
+
+<Layout
+  titulo="Política de privacidade · SmartDespensa"
+  descricao="Política de privacidade do aplicativo SmartDespensa, da EFAB Tecnologia."
+  pagina="privacidade.html"
+>
+  <Legal html={html} />
+</Layout>

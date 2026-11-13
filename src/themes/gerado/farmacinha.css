@@ -1,0 +1,53 @@
+/* Gerado por scripts/tokens-to-css.mjs a partir de src/themes/tokens. Não edite à mão. */
+
+[data-tema="farmacinha"] {
+  --fundo: #fbf8f3;
+  --superficie: #ffffff;
+  --superficie-recuada: #f2ede4;
+  --linha: #e3dcd0;
+  --linha-forte: #808b86;
+  --tinta: #1d2724;
+  --tinta-suave: #56625e;
+  --marca: #0e6b5a;
+  --marca-fundo: #0e6b5a;
+  --sobre-marca: #ffffff;
+  --marca-suave: #ddf0ea;
+  --destaque: #a9452b;
+  --destaque-suave: #fde7df;
+  --calor: #ee7b5e;
+  --ok: #0e6b5a;
+  --alerta: #8a4b00;
+  --critico: #a3261b;
+  --raio-sm: 8px;
+  --raio-md: 14px;
+  --raio-lg: 24px;
+  --fonte-titulo: 'Bricolage Grotesque Variable', 'Figtree Variable', system-ui, sans-serif;
+  --fonte-texto: 'Figtree Variable', system-ui, sans-serif;
+  --sombra-cartao: 0 1px 2px rgba(29, 39, 36, 0.06), 0 2px 8px rgba(29, 39, 36, 0.06);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-tema="farmacinha"] {
+    --fundo: #121816;
+    --superficie: #1b2320;
+    --superficie-recuada: #0d1210;
+    --linha: #2c3633;
+    --linha-forte: #6b7773;
+    --tinta: #eef2ef;
+    --tinta-suave: #a5b0ac;
+    --marca: #5fcbb1;
+    --marca-fundo: #5fcbb1;
+    --sobre-marca: #0b1f1a;
+    --marca-suave: #143a31;
+    --destaque: #f5a792;
+    --destaque-suave: #4a2419;
+    --calor: #f2917a;
+    --ok: #5fcbb1;
+    --alerta: #f5c26b;
+    --critico: #ff9c90;
+    --sombra-cartao: none;
+    color-scheme: dark;
+  }
+}
+

@@ -1,8 +1,12 @@
 # efabtec.github.io
 
-Site da EFAB Tecnologia, com as páginas públicas do SmartDespensa, do Daisy e da Farmacinha exigidas pela Play Console.
+Site da EFAB Tecnologia e as páginas públicas dos apps (SmartDespensa, Daisy e Farmacinha), incluindo
+as exigidas pela Play Console.
 
-HTML e CSS estáticos, sem build, sem JavaScript e sem cookies. Publicado pelo GitHub Pages a partir da `main`.
+Feito com [Astro](https://astro.build) e gerado como HTML estático: sem JavaScript no navegador, sem
+cookies, sem analytics, e as fontes vêm do próprio site, sem pedido a terceiros. O GitHub Pages
+publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decisão no
+[ADR 0051](https://github.com/efabtec/handbook/blob/main/decisoes/0051-site-da-efabtec-em-astro.md).
 
 | Página | URL |
 |---|---|
@@ -20,14 +24,45 @@ HTML e CSS estáticos, sem build, sem JavaScript e sem cookies. Publicado pelo G
 ## Rodar localmente
 
 ```sh
-python3 -m http.server 8000
+npm ci
+npm run dev       # http://localhost:4321
+npm run build     # gera dist/ e roda scripts/checa-urls.mjs
+npm run preview   # serve o dist/
 ```
 
-Abra http://localhost:8000/.
+## Onde fica cada coisa
+
+| Caminho | O que é |
+|---|---|
+| `src/data/apps/*.ts` | Conteúdo de cada app: textos, recursos, status, links e páginas legais. O tipo está em `src/data/tipos.ts`. |
+| `src/data/efab.ts` | Razão social, CNPJ, cidade e e-mail. |
+| `src/conteudo/legal/<app>/*.html` | Texto das políticas, termos e páginas de exclusão, em HTML puro. |
+| `src/pages/` | Uma página por URL. `privacidade.astro` vira `privacidade.html` (`build.format: 'preserve'`). |
+| `src/layouts/` | `Base` (head e SEO), `Efab`, `App` e um layout por app em `apps/`, que carrega o tema e as fontes dele. |
+| `src/themes/tokens/` | Cópia do `docs/design-system/tokens.json` de cada app. |
+| `src/themes/gerado/` | CSS dos temas, gerado por `npm run tokens`. Não edite à mão. |
+| `public/` | Arquivos servidos como estão: logos, `robots.txt` e a verificação do Search Console. |
+
+## Temas
+
+Cada app tem as cores, as fontes e os cantos do seu design system. `scripts/tokens-to-css.mjs`
+traduz os tokens de cada app para as variáveis do site (`--fundo`, `--marca`, `--tinta`...),
+escopadas em `[data-tema="<app>"]`, e falha se algum par de texto ficar sem contraste.
+
+Mudou um tema ou um logo num app? Rode `npm run sync-tokens`, que copia os tokens e os logos dos
+clones irmãos (`../SmartDespensa`, `../farmacinha`, `../daisy`) e regera o CSS. O CI não lê os
+repositórios dos apps, que são privados: o resultado é commitado aqui.
 
 ## Manutenção
 
-- Mudou um SDK, uma permissão ou uma Cloud Function do app? Revise `smartdespensa/privacidade.html` ou `daisy/privacidade.html`, atualize a data de vigência e o formulário "Segurança dos dados" na Play Console.
-- O cabeçalho e o rodapé se repetem em cada página: altere todos juntos.
-- A URL da política do Daisy está no app (`URL_POLITICA_PRIVACIDADE`, no aviso antes da primeira foto da carteirinha): não mude o caminho.
-- As páginas da Farmacinha estão marcadas como rascunho (aviso no topo e `noindex`) até a revisão jurídica e o lançamento; a origem do texto é `docs/legal/` no repo do app. As URLs estão no app (tela Configurações): não mude os caminhos.
+- **Não mude os caminhos das URLs da tabela.** Estão nos apps (Configurações da Farmacinha,
+  `URL_POLITICA_PRIVACIDADE` do Daisy), na Play Console e no Search Console.
+  `scripts/checa-urls.mjs` falha o build se alguma sumir.
+- Mudou um SDK, uma permissão ou uma Cloud Function de um app? Revise a política dele em
+  `src/conteudo/legal/`, atualize a data de vigência e o formulário "Segurança dos dados" na Play Console.
+- As páginas legais da Farmacinha estão em rascunho (aviso no topo, `noindex` e fora do sitemap)
+  até a revisão jurídica e o lançamento; a origem do texto é `docs/legal/` no repo do app. Ao
+  publicar, tire o `noindex` da página e a entrada em `RASCUNHOS` de `astro.config.mjs` e de
+  `scripts/checa-urls.mjs`.
+- Domínio próprio: mude `SITE` em `astro.config.mjs`, crie `public/CNAME` e atualize as URLs na
+  Play Console e nos apps.

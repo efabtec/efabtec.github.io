@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/apps/Farmacinha.astro";
+import Legal from "../../components/Legal.astro";
+import html from "../../conteudo/legal/farmacinha/excluir-dados.html?raw";
+---
+
+<Layout
+  titulo="Apagar seus dados · Farmacinha"
+  descricao="Como apagar os dados do aplicativo Farmacinha, da EFAB Tecnologia."
+  pagina="excluir-dados.html"
+  noindex
+>
+  <Legal html={html} />
+</Layout>
