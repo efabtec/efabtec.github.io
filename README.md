@@ -69,6 +69,25 @@ leva à Google Play; `teste` com `links.teste` leva ao opt-in, e sem link vira p
 e-mail; `em-breve` pede aviso do lançamento por e-mail. Preço de referência em
 `planos.precoMensal`/`precoAnual`; sem ele, a página diz que o valor aparece na Google Play.
 
+## Compartilhamento e buscadores
+
+- Cada página tem Open Graph e `twitter:card` com a imagem do app (`public/og/<app>.png`, 1200 × 630).
+  As imagens saem de `scripts/gerar-og.mjs`, com o tema, a fonte e o símbolo de cada app. Mudou o
+  nome, a chamada, o tema ou o logo? Rode
+  `npm i --no-save playwright@1.64.1 && node scripts/gerar-og.mjs` (usa o Chrome instalado) e commite.
+- A landing de cada app tem JSON-LD `MobileApplication` (`src/data/jsonld.ts`), com oferta de preço
+  zero: o app é gratuito e o Premium é compra no app. A home tem `Organization`.
+- O sitemap fica em `/sitemap-index.xml`, citado no `robots.txt`.
+
+## Lançamento de um app
+
+1. Em `src/data/apps/<app>.ts`, mude `status` para `publicado` e preencha `links.play`. A chamada
+   vira "Baixar na Google Play" e o JSON-LD ganha o `installUrl`. No teste aberto, use `teste` com
+   `links.teste`.
+2. Confirme o preço em `planos.precoMensal`/`precoAnual`.
+3. Se o app tem páginas em rascunho, tire o `noindex` (veja abaixo).
+4. No Search Console, envie `https://efabtec.github.io/sitemap-index.xml`, se ainda não enviou.
+
 ## Manutenção
 
 - Os princípios da home ("sem anúncios", "comece sem cadastro"...) valem para os três apps hoje. Se um app passar a ter anúncios ou exigir conta, revise `src/pages/index.astro`.
