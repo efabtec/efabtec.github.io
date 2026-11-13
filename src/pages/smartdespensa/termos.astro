@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/apps/SmartDespensa.astro";
+import Legal from "../../components/Legal.astro";
+import html from "../../conteudo/legal/smartdespensa/termos.html?raw";
+---
+
+<Layout
+  titulo="Termos de uso · SmartDespensa"
+  descricao="Termos de uso do aplicativo SmartDespensa, da EFAB Tecnologia."
+  pagina="termos.html"
+  noindex
+>
+  <Legal html={html} />
+</Layout>
