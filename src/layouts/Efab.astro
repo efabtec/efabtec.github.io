@@ -4,6 +4,7 @@ import "../themes/gerado/efab.css";
 import Base from "./Base.astro";
 import Cabecalho from "../components/Cabecalho.astro";
 import Rodape from "../components/Rodape.astro";
+import { jsonldEfab } from "../data/jsonld";
 
 interface Props {
   titulo: string;
@@ -20,7 +21,14 @@ const links = [
 ];
 ---
 
-<Base titulo={titulo} descricao={descricao} tema="efab" favicon="/favicon.svg">
+<Base
+  titulo={titulo}
+  descricao={descricao}
+  tema="efab"
+  favicon="/favicon.svg"
+  imagem="/og/efab.png"
+  jsonld={atual === undefined ? jsonldEfab : undefined}
+>
   <Cabecalho nome="EFAB" sobrenome="Tecnologia" href="/" links={links} atual={atual} />
   <main>
     <slot />

@@ -5,6 +5,7 @@ import Base from "./Base.astro";
 import Cabecalho from "../components/Cabecalho.astro";
 import Rodape from "../components/Rodape.astro";
 import type { App } from "../data/tipos";
+import { jsonldApp } from "../data/jsonld";
 
 export interface Props {
   app: App;
@@ -25,7 +26,15 @@ const links = [
 ];
 ---
 
-<Base titulo={titulo} descricao={descricao} tema={app.slug} noindex={noindex} favicon={simbolo}>
+<Base
+  titulo={titulo}
+  descricao={descricao}
+  tema={app.slug}
+  noindex={noindex}
+  favicon={simbolo}
+  imagem={`/og/${app.slug}.png`}
+  jsonld={pagina === "./" ? jsonldApp(app) : undefined}
+>
   <Cabecalho nome={app.nome} href="./" simbolo={simbolo} links={links} atual={pagina} />
   <main class="conteudo">
     <slot />
