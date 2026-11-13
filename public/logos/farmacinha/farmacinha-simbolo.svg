@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Farmacinha">
+<title>Farmacinha</title>
+<g transform="translate(0 0) scale(1.0)">
+  <defs><clipPath id="m-cap"><rect x="18" y="25" width="28" height="14" rx="7"/></clipPath></defs>
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="#0E6B5A"/>
+  <rect x="6" y="30.5" width="52" height="3" fill="#FBF8F3"/>
+  <rect x="15.5" y="22.5" width="33" height="19" rx="9.5" fill="#0E6B5A"/>
+  <g clip-path="url(#m-cap)">
+    <rect x="18" y="25" width="14" height="14" fill="#EE7B5E"/>
+    <rect x="32" y="25" width="14" height="14" fill="#FBF8F3"/>
+  </g>
+</g>
+</svg>

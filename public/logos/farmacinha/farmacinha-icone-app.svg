@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Farmacinha">
+<title>Farmacinha</title>
+<rect width="512" height="512" fill="#0E6B5A"/>
+<defs><clipPath id="ic-cap"><rect x="186" y="221" width="140" height="70" rx="35"/></clipPath></defs>
+<rect x="116" y="116" width="280" height="280" rx="76" fill="#FBF8F3"/>
+<rect x="116" y="248" width="280" height="16" fill="#0E6B5A"/>
+<rect x="172" y="207" width="168" height="98" rx="49" fill="#FBF8F3"/>
+<g clip-path="url(#ic-cap)">
+  <rect x="186" y="221" width="70" height="70" fill="#EE7B5E"/>
+  <rect x="256" y="221" width="70" height="70" fill="#0E6B5A"/>
+</g>
+</svg>

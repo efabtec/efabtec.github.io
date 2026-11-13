@@ -1,0 +1,44 @@
+{
+  "name": "SmartDespensa",
+  "version": 1,
+  "fonte": "Extraído do tema atual de :core:ui (Color.kt, StatusColors.kt, Type.kt e Shape.kt) em 2026-11-13 (SD-126). Este arquivo descreve o tema; quem muda um valor muda os dois.",
+  "color": {
+    "themes": [
+      { "id": "light", "name": "Claro" },
+      { "id": "dark", "name": "Escuro" }
+    ],
+    "tokens": [
+      { "name": "primary", "kotlin": "BrandTealDark / BrandTealLight", "value": { "light": "#1D9E75", "dark": "#6FDBB5" }, "usage": "Ação principal, estado ativo, links." },
+      { "name": "on-primary", "value": { "light": "#FFFFFF", "dark": "#123024" }, "usage": "Texto e ícones sobre primary." },
+      { "name": "primary-container", "kotlin": "BrandTeal / BrandTealDark", "value": { "light": "#5DCAA5", "dark": "#1D9E75" }, "usage": "Fundo tingido de destaque." },
+      { "name": "secondary", "kotlin": "BrandAmber / BrandAmberLight", "value": { "light": "#EF9F27", "dark": "#F3B458" }, "usage": "Âmbar da marca: destaques secundários." },
+      { "name": "secondary-container", "kotlin": "BrandAmberContainer", "value": { "light": "#F7D9A8", "dark": "#5A4522" }, "usage": "Fundo tingido âmbar." },
+      { "name": "tertiary", "kotlin": "BrandCoral", "value": { "light": "#F0997B", "dark": "#F0997B" }, "usage": "Coral: toque de calor, mascote." },
+      { "name": "background", "kotlin": "BrandSand / BrandDarkBackground", "value": { "light": "#FAECE7", "dark": "#1E1A16" }, "usage": "Fundo das telas." },
+      { "name": "surface", "kotlin": "BrandDarkSurface", "value": { "light": "#FFFFFF", "dark": "#2A241E" }, "usage": "Cartões, folhas e diálogos." },
+      { "name": "surface-variant", "kotlin": "BrandSurfaceVariant / BrandDarkSurfaceVariant", "value": { "light": "#F0DED6", "dark": "#3A322B" }, "usage": "Áreas recuadas." },
+      { "name": "ink", "kotlin": "BrandInk / BrandCream", "value": { "light": "#123024", "dark": "#F5E9E2" }, "usage": "Texto principal (onBackground, onSurface)." },
+      { "name": "ink-muted", "kotlin": "BrandInkSoft / BrandCreamDim", "value": { "light": "#5A4038", "dark": "#B7A79C" }, "usage": "Texto secundário (onSurfaceVariant)." },
+      { "name": "outline", "kotlin": "BrandOutline / BrandDarkOutline", "value": { "light": "#D9C2B7", "dark": "#5A4E45" }, "usage": "Bordas e divisórias." },
+      { "name": "error", "kotlin": "CriticalRed", "value": { "light": "#C23B3B", "dark": "#F2B8B5" }, "usage": "Erros." },
+      { "name": "status-sucesso", "kotlin": "statusColors.sucesso", "value": { "light": "#1D9E75", "dark": "#6FDBB5" }, "usage": "Em dia, dentro da validade. Texto e ícone; sempre com palavra além da cor." },
+      { "name": "status-alerta", "kotlin": "statusColors.alerta", "value": { "light": "#BA7517", "dark": "#F3B458" }, "usage": "Vencendo em breve." },
+      { "name": "status-critico", "kotlin": "statusColors.critico", "value": { "light": "#C23B3B", "dark": "#F2B8B5" }, "usage": "Vencido e falta." }
+    ]
+  },
+  "type": {
+    "families": {
+      "display": "Baloo 2 (Google Fonts): títulos, displays e o wordmark",
+      "sans": "Nunito Sans (Google Fonts): texto corrido, rótulos e títulos pequenos"
+    },
+    "styles": "Escala padrão do Material 3 com as famílias acima: display*, headline* e titleLarge em Baloo 2; titleMedium, titleSmall, body* e label* em Nunito Sans."
+  },
+  "shape": {
+    "extraSmall": "6dp",
+    "small": "12dp",
+    "medium": "16dp",
+    "large": "20dp",
+    "extraLarge": "28dp"
+  },
+  "spacing": "Sem escala de espaçamento no tema hoje: os `.dp` ficam nos componentes de :core:ui. Uma escala nova é decisão de design, não deste arquivo."
+}

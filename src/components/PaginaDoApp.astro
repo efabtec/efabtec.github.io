@@ -1,0 +1,30 @@
+---
+import type { App } from "../data/tipos";
+import { efab } from "../data/efab";
+
+interface Props {
+  app: App;
+}
+
+const { app } = Astro.props;
+---
+
+<div class="wrap estreito">
+  <span class="tag">{app.selo}</span>
+  <h1>{app.nome}</h1>
+  <p class="lead">{app.slogan}</p>
+
+  <h2>O que o app faz</h2>
+  <ul>
+    {app.recursos.map((r) => <li>{r}</li>)}
+  </ul>
+  {app.ressalva && <p>{app.ressalva}</p>}
+
+  <h2>{app.tituloLegais}</h2>
+  <ul>
+    {app.legais.map((l) => <li><a href={l.href}>{l.rotulo}</a></li>)}
+  </ul>
+
+  <h2>Suporte</h2>
+  <p>Dúvidas, sugestões ou problemas: <a href={`mailto:${efab.email}`}>{efab.email}</a></p>
+</div>

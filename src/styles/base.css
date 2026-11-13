@@ -1,0 +1,264 @@
+/* Estilos comuns a todas as páginas. Cores, fontes e cantos vêm só das variáveis do tema
+   (src/themes/gerado/*.css), escolhido pelo atributo data-tema do <html>. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--fundo);
+  color: var(--tinta);
+  font: 17px/1.65 var(--fonte-texto);
+}
+
+main {
+  flex: 1;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.wrap.estreito {
+  max-width: 760px;
+}
+
+/* Tipografia */
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
+  margin: 44px 0 10px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 24px 0 6px;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--marca);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--marca);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--tinta-suave);
+  margin: 0 0 32px;
+}
+
+.meta {
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+li::marker {
+  color: var(--marca);
+}
+
+/* Blocos */
+
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-cartao);
+  padding: 20px 22px;
+  margin: 16px 0;
+}
+
+.card > :first-child {
+  margin-top: 0;
+}
+
+.card > :last-child {
+  margin-bottom: 0;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--marca-suave);
+  color: var(--tinta);
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.tag + h1 {
+  margin-top: 12px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 16px 0;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-sm);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--linha);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+th {
+  background: var(--superficie-recuada);
+}
+
+/* Cabeçalho */
+
+.topo {
+  border-bottom: 1px solid var(--linha);
+  background: var(--fundo);
+}
+
+.topo .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--tinta);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.marca img {
+  width: 32px;
+  height: 32px;
+}
+
+.marca .sobrenome {
+  color: var(--marca);
+}
+
+.topo nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.topo nav a {
+  color: var(--tinta-suave);
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.topo nav a:hover,
+.topo nav a[aria-current="page"] {
+  color: var(--tinta);
+}
+
+.topo nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--marca);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+}
+
+/* Conteúdo */
+
+.conteudo {
+  padding: 40px 0 64px;
+}
+
+/* Rodapé */
+
+.rodape {
+  border-top: 1px solid var(--linha);
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+.rodape .wrap {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.rodape p {
+  margin: 4px 0;
+}
+
+.rodape a {
+  color: var(--tinta-suave);
+}

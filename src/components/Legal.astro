@@ -1,0 +1,13 @@
+---
+// Corpo de uma página legal. O texto fica em src/conteudo/legal/<app>/<pagina>.html, em HTML puro,
+// para ser revisado e comparado sem a sintaxe do Astro no meio.
+interface Props {
+  html: string;
+}
+
+const { html } = Astro.props;
+---
+
+<article class="wrap estreito legal">
+  <Fragment set:html={html} />
+</article>

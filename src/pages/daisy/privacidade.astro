@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/apps/Daisy.astro";
+import Legal from "../../components/Legal.astro";
+import html from "../../conteudo/legal/daisy/privacidade.html?raw";
+---
+
+<Layout
+  titulo="Política de privacidade · Daisy"
+  descricao="Política de privacidade do aplicativo Daisy, da EFAB Tecnologia."
+  pagina="privacidade.html"
+>
+  <Legal html={html} />
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Efab.astro";
+import { apps } from "../data/apps";
+import { efab } from "../data/efab";
+---
+
+<Layout
+  titulo="EFAB Tecnologia"
+  descricao="A EFAB Tecnologia cria aplicativos que simplificam a rotina da casa. Conheça o SmartDespensa, o Daisy e a Farmacinha."
+>
+  <h1>Aplicativos que simplificam a rotina da casa</h1>
+  <p class="lead">
+    A EFAB Tecnologia é uma empresa de Curitiba/PR que desenvolve aplicativos para organizar o dia a dia doméstico
+    com menos esforço e menos desperdício.
+  </p>
+
+  <h2>Produtos</h2>
+  {
+    apps.map((app) => (
+      <div class="card">
+        <span class="tag">{app.selo}</span>
+        <h3><a href={`${app.slug}/`}>{app.nome}</a></h3>
+        <p>{app.resumo}</p>
+        <p>
+          <a href={`${app.slug}/`}>Conhecer o app</a> · <a href={`${app.slug}/${app.legais[0].href}`}>{app.legais[0].rotulo}</a>
+        </p>
+      </div>
+    ))
+  }
+
+  <h2 id="contato">Contato</h2>
+  <p>E-mail: <a href={`mailto:${efab.email}`}>{efab.email}</a></p>
+</Layout>

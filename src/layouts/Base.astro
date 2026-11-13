@@ -1,0 +1,40 @@
+---
+// Esqueleto de toda página: <head> com SEO e o tema escolhido. O CSS do tema e as fontes
+// entram pelo layout de cada app (layouts/apps/*) ou pelo da EFAB, para cada página carregar só as suas.
+import "../styles/base.css";
+import type { Tema } from "../data/tipos";
+import { efab } from "../data/efab";
+
+interface Props {
+  titulo: string;
+  descricao?: string;
+  tema: Tema;
+  /** Páginas em rascunho ficam fora dos buscadores e do sitemap. */
+  noindex?: boolean;
+  favicon?: string;
+}
+
+const { titulo, descricao, tema, noindex = false, favicon } = Astro.props;
+const canonica = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="pt-BR" data-tema={tema}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    {descricao && <meta name="description" content={descricao} />}
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonica} />}
+    {favicon && <link rel="icon" type="image/svg+xml" href={favicon} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={efab.nome} />
+    <meta property="og:title" content={titulo} />
+    {descricao && <meta property="og:description" content={descricao} />}
+    <meta property="og:url" content={canonica} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

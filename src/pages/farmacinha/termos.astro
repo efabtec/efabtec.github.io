@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/apps/Farmacinha.astro";
+import Legal from "../../components/Legal.astro";
+import html from "../../conteudo/legal/farmacinha/termos.html?raw";
+---
+
+<Layout
+  titulo="Termos de uso · Farmacinha"
+  descricao="Termos de uso do aplicativo Farmacinha, da EFAB Tecnologia."
+  pagina="termos.html"
+  noindex
+>
+  <Legal html={html} />
+</Layout>

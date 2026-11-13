@@ -1,0 +1,13 @@
+---
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/figtree";
+import "../../themes/gerado/farmacinha.css";
+import App, { type Props as PropsDoApp } from "../App.astro";
+import { farmacinha } from "../../data/apps";
+
+type Props = Omit<PropsDoApp, "app">;
+---
+
+<App app={farmacinha} {...Astro.props}>
+  <slot />
+</App>

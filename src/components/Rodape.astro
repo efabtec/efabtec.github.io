@@ -1,0 +1,10 @@
+---
+import { efab } from "../data/efab";
+---
+
+<footer class="rodape">
+  <div class="wrap">
+    <p>{efab.nome} · {efab.razaoSocial} · CNPJ {efab.cnpj}</p>
+    <p>{efab.cidade} · <a href={`mailto:${efab.email}`}>{efab.email}</a></p>
+  </div>
+</footer>

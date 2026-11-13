@@ -1,0 +1,53 @@
+/* Gerado por scripts/tokens-to-css.mjs a partir de src/themes/tokens. Não edite à mão. */
+
+[data-tema="daisy"] {
+  --fundo: #fff8f0;
+  --superficie: #ffffff;
+  --superficie-recuada: #f8ede0;
+  --linha: #ebddcc;
+  --linha-forte: #8c7d70;
+  --tinta: #2a1f1a;
+  --tinta-suave: #6b5a4e;
+  --marca: #a93d06;
+  --marca-fundo: #f2600f;
+  --sobre-marca: #2a1406;
+  --marca-suave: #ffe3cf;
+  --destaque: #b8440a;
+  --destaque-suave: #fff1c7;
+  --calor: #f2600f;
+  --ok: #2b7350;
+  --alerta: #3949ab;
+  --critico: #b3261e;
+  --raio-sm: 8px;
+  --raio-md: 16px;
+  --raio-lg: 28px;
+  --fonte-titulo: 'Fraunces Variable', Georgia, serif;
+  --fonte-texto: 'Figtree Variable', system-ui, sans-serif;
+  --sombra-cartao: 0 1px 2px rgba(42, 31, 26, 0.06), 0 2px 8px rgba(42, 31, 26, 0.06);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-tema="daisy"] {
+    --fundo: #17120f;
+    --superficie: #211a16;
+    --superficie-recuada: #110d0b;
+    --linha: #3a2f28;
+    --linha-forte: #7d6e63;
+    --tinta: #f6eee7;
+    --tinta-suave: #bfae9f;
+    --marca: #ffb080;
+    --marca-fundo: #ff7a2e;
+    --sobre-marca: #2a1406;
+    --marca-suave: #4d230a;
+    --destaque: #b8440a;
+    --destaque-suave: #3d3010;
+    --calor: #ff7a2e;
+    --ok: #7fd3a8;
+    --alerta: #aeb9ff;
+    --critico: #ff9c90;
+    --sombra-cartao: none;
+    color-scheme: dark;
+  }
+}
+

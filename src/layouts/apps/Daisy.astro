@@ -1,0 +1,13 @@
+---
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/figtree";
+import "../../themes/gerado/daisy.css";
+import App, { type Props as PropsDoApp } from "../App.astro";
+import { daisy } from "../../data/apps";
+
+type Props = Omit<PropsDoApp, "app">;
+---
+
+<App app={daisy} {...Astro.props}>
+  <slot />
+</App>

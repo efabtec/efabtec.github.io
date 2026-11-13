@@ -1,0 +1,53 @@
+/* Gerado por scripts/tokens-to-css.mjs a partir de src/themes/tokens. Não edite à mão. */
+
+[data-tema="efab"] {
+  --fundo: #fbfaf7;
+  --superficie: #ffffff;
+  --superficie-recuada: #f3f1ec;
+  --linha: #e3e0d8;
+  --linha-forte: #8a918d;
+  --tinta: #1d2321;
+  --tinta-suave: #5b6460;
+  --marca: #2f6b4f;
+  --marca-fundo: #2f6b4f;
+  --sobre-marca: #ffffff;
+  --marca-suave: #e6f0ea;
+  --destaque: #2f6b4f;
+  --destaque-suave: #e6f0ea;
+  --calor: #2f6b4f;
+  --ok: #2f6b4f;
+  --alerta: #8a4b00;
+  --critico: #a3261b;
+  --raio-sm: 8px;
+  --raio-md: 12px;
+  --raio-lg: 20px;
+  --fonte-titulo: 'Figtree Variable', system-ui, sans-serif;
+  --fonte-texto: 'Figtree Variable', system-ui, sans-serif;
+  --sombra-cartao: 0 1px 2px rgba(29, 35, 33, 0.06), 0 2px 8px rgba(29, 35, 33, 0.05);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-tema="efab"] {
+    --fundo: #131715;
+    --superficie: #1b201e;
+    --superficie-recuada: #0f1311;
+    --linha: #2c3330;
+    --linha-forte: #6c7571;
+    --tinta: #e8ebe9;
+    --tinta-suave: #a3aca8;
+    --marca: #7cc4a0;
+    --marca-fundo: #7cc4a0;
+    --sobre-marca: #0f1a14;
+    --marca-suave: #1f2d26;
+    --destaque: #7cc4a0;
+    --destaque-suave: #1f2d26;
+    --calor: #7cc4a0;
+    --ok: #7cc4a0;
+    --alerta: #f5c26b;
+    --critico: #ff9c90;
+    --sombra-cartao: none;
+    color-scheme: dark;
+  }
+}
+

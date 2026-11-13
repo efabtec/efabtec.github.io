@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Farmacinha">
+<title>Farmacinha</title>
+<g transform="translate(0 0) scale(1.0)">
+  <defs>
+    <mask id="mw-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <rect width="64" height="64" fill="#fff"/>
+      <rect x="6" y="30.5" width="52" height="3" fill="#000"/>
+      <rect x="15.5" y="22.5" width="33" height="19" rx="9.5" fill="#fff"/>
+      <rect x="18" y="25" width="28" height="14" rx="7" fill="#000"/>
+    </mask>
+    <clipPath id="mw-half"><rect x="0" y="0" width="31" height="64"/></clipPath>
+  </defs>
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="#FFFFFF" mask="url(#mw-mask)"/>
+  <rect x="20.5" y="27.5" width="23" height="9" rx="4.5" fill="#FFFFFF" clip-path="url(#mw-half)"/>
+</g>
+</svg>

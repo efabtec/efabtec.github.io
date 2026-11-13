@@ -1,0 +1,53 @@
+/* Gerado por scripts/tokens-to-css.mjs a partir de src/themes/tokens. Não edite à mão. */
+
+[data-tema="smartdespensa"] {
+  --fundo: #FAECE7;
+  --superficie: #FFFFFF;
+  --superficie-recuada: #F0DED6;
+  --linha: #D9C2B7;
+  --linha-forte: #5A4038;
+  --tinta: #123024;
+  --tinta-suave: #5A4038;
+  --marca: #123024;
+  --marca-fundo: #1D9E75;
+  --sobre-marca: #123024;
+  --marca-suave: #5DCAA5;
+  --destaque: #EF9F27;
+  --destaque-suave: #F7D9A8;
+  --calor: #F0997B;
+  --ok: #1D9E75;
+  --alerta: #BA7517;
+  --critico: #C23B3B;
+  --raio-sm: 6px;
+  --raio-md: 16px;
+  --raio-lg: 28px;
+  --fonte-titulo: 'Baloo 2 Variable', system-ui, sans-serif;
+  --fonte-texto: 'Nunito Sans Variable', system-ui, sans-serif;
+  --sombra-cartao: none;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-tema="smartdespensa"] {
+    --fundo: #1E1A16;
+    --superficie: #2A241E;
+    --superficie-recuada: #3A322B;
+    --linha: #5A4E45;
+    --linha-forte: #B7A79C;
+    --tinta: #F5E9E2;
+    --tinta-suave: #B7A79C;
+    --marca: #6FDBB5;
+    --marca-fundo: #6FDBB5;
+    --sobre-marca: #123024;
+    --marca-suave: #3A322B;
+    --destaque: #F3B458;
+    --destaque-suave: #5A4522;
+    --calor: #F0997B;
+    --ok: #6FDBB5;
+    --alerta: #F3B458;
+    --critico: #F2B8B5;
+    --sombra-cartao: none;
+    color-scheme: dark;
+  }
+}
+

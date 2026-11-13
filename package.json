@@ -1,0 +1,26 @@
+{
+  "name": "efabtec-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "tokens": "node scripts/tokens-to-css.mjs",
+    "sync-tokens": "node scripts/sync-tokens.mjs && node scripts/tokens-to-css.mjs",
+    "build": "astro build && node scripts/checa-urls.mjs",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "@fontsource-variable/baloo-2": "5.3.0",
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/figtree": "5.3.0",
+    "@fontsource-variable/fraunces": "5.3.0",
+    "@fontsource-variable/nunito-sans": "5.3.0",
+    "astro": "7.4.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "typescript": "6.0.3"
+  }
+}
