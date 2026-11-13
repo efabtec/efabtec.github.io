@@ -8,7 +8,12 @@ import sitemap from "@astrojs/sitemap";
 const SITE = "https://efabtec.github.io";
 
 // Páginas em rascunho (noindex) ficam fora do sitemap.
-const RASCUNHOS = ["/farmacinha/privacidade", "/farmacinha/termos", "/farmacinha/excluir-dados"];
+const RASCUNHOS = [
+  "/farmacinha/privacidade",
+  "/farmacinha/termos",
+  "/farmacinha/excluir-dados",
+  "/smartdespensa/termos",
+];
 
 /**
  * Leva a URL do sitemap para a forma canônica: pasta com barra final, página com .html.

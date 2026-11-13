@@ -206,9 +206,10 @@ export const smartdespensa: App = {
       ],
     },
   ],
-  tituloLegais: "Privacidade",
+  tituloLegais: "Privacidade e termos",
   legais: [
     { rotulo: "Política de privacidade", curto: "Privacidade", href: "privacidade.html" },
+    { rotulo: "Termos de uso (rascunho)", curto: "Termos", href: "termos.html" },
     { rotulo: "Como excluir sua conta e seus dados", curto: "Excluir conta", href: "excluir-conta.html" },
   ],
 };

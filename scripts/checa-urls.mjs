@@ -23,7 +23,12 @@ const LEGADAS = [
   "farmacinha/excluir-dados.html",
 ];
 
-const RASCUNHOS = ["farmacinha/privacidade.html", "farmacinha/termos.html", "farmacinha/excluir-dados.html"];
+const RASCUNHOS = [
+  "farmacinha/privacidade.html",
+  "farmacinha/termos.html",
+  "farmacinha/excluir-dados.html",
+  "smartdespensa/termos.html",
+];
 
 const erros = [];
 
