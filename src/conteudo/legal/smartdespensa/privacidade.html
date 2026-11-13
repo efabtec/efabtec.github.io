@@ -1,5 +1,5 @@
 <h1>Política de privacidade do SmartDespensa</h1>
-<p class="meta">Vigente desde 14 de outubro de 2026.</p>
+<p class="meta">Vigente desde 13 de novembro de 2026. Versão anterior: 14 de outubro de 2026.</p>
 
 <p>Esta política explica quais dados o aplicativo SmartDespensa trata, para quê, com quem eles são compartilhados e como você exerce seus direitos, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018, LGPD).</p>
 
@@ -9,7 +9,7 @@
 
 <h2>2. Formas de usar o app</h2>
 <ul>
-  <li><strong>Modo convidado:</strong> sem login. Seus itens ficam só no aparelho e não são sincronizados com nossos servidores. O app cria um identificador anônimo para proteger o acesso aos recursos on-line (como a leitura de notas fiscais e as sugestões de receitas).</li>
+  <li><strong>Modo convidado:</strong> sem login. Seus itens ficam só no aparelho e não são sincronizados com nossos servidores. O app cria um identificador anônimo para proteger o acesso aos recursos on-line (como a leitura de notas fiscais e as sugestões de receitas). Esse identificador e a contagem diária de uso desses recursos ficam nos nossos servidores, sem o conteúdo da sua despensa.</li>
   <li><strong>Conta Google:</strong> você entra com sua conta Google e seus dados são sincronizados na nuvem, para usar em mais de um aparelho e compartilhar com sua casa.</li>
 </ul>
 
@@ -32,7 +32,7 @@
       </tr>
       <tr>
         <td>Nome exibido e participação em casas compartilhadas</td>
-        <td>Compartilhar a despensa: as pessoas da mesma casa veem seu nome e os itens compartilhados</td>
+        <td>Compartilhar a despensa: as pessoas da mesma casa veem seu nome, o que é da casa (veja a seção 6) e se quem criou a casa assina o Premium</td>
         <td>Execução de contrato (V)</td>
       </tr>
       <tr>
@@ -46,7 +46,7 @@
         <td>Execução de contrato (V)</td>
       </tr>
       <tr>
-        <td>Dados de uso do app, identificador do aparelho e, se você permitir, o identificador de publicidade</td>
+        <td>Dados de uso do app e identificadores do aparelho (ID de instalação do Firebase e ID de instância do Analytics). O app não coleta o identificador de publicidade</td>
         <td>Entender como o app é usado e melhorar recursos (Google Analytics for Firebase)</td>
         <td>Legítimo interesse (IX)</td>
       </tr>
@@ -64,6 +64,11 @@
         <td>Comprovante da compra da assinatura (token do Google Play)</td>
         <td>Validar a assinatura premium. O pagamento é feito no Google Play; não recebemos dados do seu cartão</td>
         <td>Execução de contrato (V)</td>
+      </tr>
+      <tr>
+        <td>Identificador anônimo do modo convidado e contagem diária de uso dos recursos on-line</td>
+        <td>Proteger os recursos on-line e aplicar o limite diário de uso</td>
+        <td>Legítimo interesse (IX)</td>
       </tr>
     </tbody>
   </table>
@@ -84,14 +89,15 @@
   <li><strong>Notificações:</strong> avisos de itens perto de vencer. Você pode desativá-las nas configurações do Android.</li>
   <li><strong>Internet e estado da rede:</strong> sincronização e recursos on-line.</li>
   <li><strong>Inicialização e tarefas em segundo plano:</strong> reagendar avisos depois de reiniciar o aparelho e sincronizar seus dados.</li>
-  <li><strong>Identificador de publicidade:</strong> declarado pelo Google Analytics. Você pode redefinir ou excluir esse identificador nas configurações do Android.</li>
 </ul>
+<p>O app não pede a permissão do identificador de publicidade e não usa esse identificador.</p>
 
 <h2>6. Com quem compartilhamos</h2>
 <ul>
   <li><strong>Google</strong>, como operador: Firebase (autenticação, banco de dados Cloud Firestore, Cloud Functions, Analytics, Crashlytics, Performance Monitoring, Remote Config e App Check), API Gemini e Google Play (assinaturas e integridade). Os dados ficam armazenados na infraestrutura do Google, que pode estar fora do Brasil (veja a seção 7).</li>
   <li><strong>Secretarias da Fazenda (SEFAZ)</strong>: recebem só o endereço do QR Code da nota que você escaneou, que já é público por definição.</li>
-  <li><strong>Pessoas da sua casa</strong>: se você compartilhar a despensa, os membros veem seu nome e os itens compartilhados (estoque, listas e produtos).</li>
+  <li><strong>Open Food Facts</strong>: ao ler um código de barras que o app não conhece, o aparelho consulta direto o Open Food Facts (world.openfoodfacts.org), uma base aberta de produtos, para sugerir o nome e a marca. Vai só o código de barras, sem conta nem identificador seu; como qualquer site, o serviço vê o endereço IP do aparelho.</li>
+  <li><strong>Pessoas da sua casa</strong>: se você compartilhar a despensa, os membros veem seu nome e o que é da casa: estoque, listas, produtos, notas fiscais (com o nome de quem importou cada uma), histórico de preços e consumo. Também veem se quem criou a casa assina o Premium, que vale para todos. O plano alimentar continua só seu.</li>
   <li><strong>Autoridades</strong>: quando a lei ou uma ordem judicial exigir.</li>
 </ul>
 
@@ -101,7 +107,7 @@
 <h2>8. Por quanto tempo guardamos</h2>
 <ul>
   <li><strong>Dados da conta e conteúdo do app:</strong> enquanto sua conta existir. Ao excluir a conta, apagamos esses dados em até 30 dias.</li>
-  <li><strong>Modo convidado:</strong> os dados ficam no aparelho até você apagá-los no app ou desinstalá-lo.</li>
+  <li><strong>Modo convidado:</strong> os dados ficam no aparelho até você apagá-los no app ou desinstalá-lo. A contagem diária de uso dos recursos on-line é apagada automaticamente em até dois dias.</li>
   <li><strong>Analytics:</strong> até 14 meses. <strong>Crashlytics:</strong> até 90 dias.</li>
   <li><strong>Registros técnicos dos servidores:</strong> até 30 dias.</li>
   <li><strong>Dados de assinatura:</strong> pelo prazo exigido pela legislação fiscal e de defesa do consumidor.</li>
