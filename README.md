@@ -20,6 +20,7 @@ publica pelo workflow `.github/workflows/pages.yml` a cada push na `main`. Decis
 | Daisy | https://efabtec.github.io/daisy/ |
 | Ajuda do Daisy | https://efabtec.github.io/daisy/ajuda.html |
 | Política de privacidade do Daisy | https://efabtec.github.io/daisy/privacidade.html |
+| Termos de uso do Daisy (rascunho) | https://efabtec.github.io/daisy/termos.html |
 | Farmacinha | https://efabtec.github.io/farmacinha/ |
 | Ajuda da Farmacinha | https://efabtec.github.io/farmacinha/ajuda.html |
 | Política de privacidade da Farmacinha (rascunho) | https://efabtec.github.io/farmacinha/privacidade.html |
@@ -98,7 +99,7 @@ e-mail; `em-breve` pede aviso do lançamento por e-mail. Preço de referência e
   `scripts/checa-urls.mjs` falha o build se alguma sumir.
 - Mudou um SDK, uma permissão ou uma Cloud Function de um app? Revise a política dele em
   `src/conteudo/legal/`, atualize a data de vigência e o formulário "Segurança dos dados" na Play Console.
-- Os termos de uso do SmartDespensa e as páginas legais da Farmacinha estão em rascunho (aviso no topo, `noindex` e fora do sitemap)
+- Os termos de uso do SmartDespensa e do Daisy e as páginas legais da Farmacinha estão em rascunho (aviso no topo, `noindex` e fora do sitemap)
   até a revisão jurídica e o lançamento; a origem do texto é `docs/legal/` no repo do app. Ao
   publicar, tire o `noindex` da página e a entrada em `RASCUNHOS` de `astro.config.mjs` e de
   `scripts/checa-urls.mjs`.

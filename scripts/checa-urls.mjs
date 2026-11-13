@@ -28,6 +28,7 @@ const RASCUNHOS = [
   "farmacinha/termos.html",
   "farmacinha/excluir-dados.html",
   "smartdespensa/termos.html",
+  "daisy/termos.html",
 ];
 
 const erros = [];
