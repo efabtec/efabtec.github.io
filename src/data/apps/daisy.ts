@@ -83,6 +83,9 @@ export const daisy: App = {
       { recurso: "Histórico em PDF", gratis: "Com a marca Daisy", premium: "Sem marca" },
       { recurso: "Anúncios", gratis: "Nenhum", premium: "Nenhum" },
     ],
+    // Preço de referência decidido pelo Eduardo em 2026-11-13 (o mesmo dos três apps).
+    precoMensal: "R$ 9,90",
+    precoAnual: "R$ 79,90",
     notas: [
       "A leitura por foto usa inteligência artificial, precisa de internet e tem um limite de uso.",
       "Os limites do plano grátis podem mudar até o lançamento.",
@@ -116,7 +119,7 @@ export const daisy: App = {
     {
       pergunta: "O Daisy é gratuito?",
       resposta:
-        "Sim. O plano grátis cobre um pet com carteirinha, avisos, lembretes e curva de peso. O Premium, opcional, libera mais pets, anexos sem limite e o PDF sem marca.",
+        "Sim. O plano grátis cobre um pet com carteirinha, avisos, lembretes e curva de peso. O Premium, opcional, libera mais pets, anexos sem limite e o PDF sem marca, por R$ 9,90 por mês ou R$ 79,90 por ano (preço de referência; o valor final aparece na Google Play).",
     },
     {
       pergunta: "Não estou recebendo os avisos. O que faço?",

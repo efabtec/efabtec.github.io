@@ -2,7 +2,8 @@ import type { App } from "../tipos";
 
 // Fonte: docs/loja/ficha-da-loja.md (FARM-56) e docs/BILLING.md (FARM-30) no repo do app, e os
 // ADRs 0048 e 0049. A leitura da caixa por foto fica fora até as Functions subirem (FARM-29).
-// Preço de referência do FARM-30, "a confirmar". Se o grátis ganhar anúncios, revise `planos` e a home.
+// Preço de referência do FARM-30, confirmado pelo Eduardo em 2026-11-13. Se o grátis ganhar anúncios,
+// revise `planos` e a home.
 export const farmacinha: App = {
   slug: "farmacinha",
   nome: "Farmacinha",

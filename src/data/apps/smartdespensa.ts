@@ -86,6 +86,9 @@ export const smartdespensa: App = {
       { recurso: "Comparar o preço entre mercados", gratis: false, premium: true },
       { recurso: "Anúncios", gratis: "Nenhum", premium: "Nenhum" },
     ],
+    // Preço de referência decidido pelo Eduardo em 2026-11-13 (o mesmo dos três apps).
+    precoMensal: "R$ 9,90",
+    precoAnual: "R$ 79,90",
     notas: [
       "A assinatura de quem criou a casa vale para todos os membros.",
       "A leitura da foto do cupom e os recursos de receitas e de plano alimentar usam inteligência artificial e precisam de internet. A foto do cupom tem um limite diário de uso.",
@@ -101,7 +104,7 @@ export const smartdespensa: App = {
     {
       pergunta: "O SmartDespensa é gratuito?",
       resposta:
-        "Sim. Estoque, validades, avisos, nota fiscal, listas e casa compartilhada são gratuitos. O Premium é uma assinatura opcional, mensal ou anual, para quem quer a lista da semana, as receitas, o plano alimentar e a comparação de preços.",
+        "Sim. Estoque, validades, avisos, nota fiscal, listas e casa compartilhada são gratuitos. O Premium é uma assinatura opcional, de R$ 9,90 por mês ou R$ 79,90 por ano (preço de referência; o valor final aparece na Google Play), para quem quer a lista da semana, as receitas, o plano alimentar e a comparação de preços.",
       destaque: true,
     },
     {
