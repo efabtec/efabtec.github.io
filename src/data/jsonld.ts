@@ -8,11 +8,8 @@ const SITE = import.meta.env.SITE.replace(/\/$/, "");
 export const organizacao = {
   "@type": "Organization",
   name: efab.nome,
-  legalName: efab.razaoSocial,
   url: `${SITE}/`,
-  email: efab.email,
   logo: `${SITE}/favicon.svg`,
-  address: { "@type": "PostalAddress", addressLocality: "Curitiba", addressRegion: "PR", addressCountry: "BR" },
 };
 
 export const jsonldEfab = { "@context": "https://schema.org", ...organizacao };
