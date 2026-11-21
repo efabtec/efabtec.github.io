@@ -196,6 +196,6 @@ export const daisy: App = {
   // O caminho da política está no app (URL_POLITICA_PRIVACIDADE): não mude.
   legais: [
     { rotulo: "Política de privacidade", curto: "Privacidade", href: "privacidade.html" },
-    { rotulo: "Termos de uso (rascunho)", curto: "Termos", href: "termos.html" },
+    { rotulo: "Termos de uso", curto: "Termos", href: "termos.html" },
   ],
 };

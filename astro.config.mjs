@@ -11,11 +11,6 @@ const SITE = "https://efabtec.github.io";
 // noindex e só tem conteúdo com o id de um link.
 const RASCUNHOS = [
   "/daisy/historico",
-  "/farmacinha/privacidade",
-  "/farmacinha/termos",
-  "/farmacinha/excluir-dados",
-  "/smartdespensa/termos",
-  "/daisy/termos",
 ];
 
 /**

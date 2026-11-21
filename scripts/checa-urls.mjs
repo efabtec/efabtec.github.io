@@ -19,18 +19,10 @@ const LEGADAS = [
   "daisy/privacidade.html",
   "daisy/historico.html",
   "farmacinha/index.html",
-  "farmacinha/privacidade.html",
-  "farmacinha/termos.html",
-  "farmacinha/excluir-dados.html",
 ];
 
 const RASCUNHOS = [
   "daisy/historico.html",
-  "farmacinha/privacidade.html",
-  "farmacinha/termos.html",
-  "farmacinha/excluir-dados.html",
-  "smartdespensa/termos.html",
-  "daisy/termos.html",
 ];
 
 const erros = [];
