@@ -36,11 +36,31 @@ const externo = href.startsWith("http");
 ---
 
 <div class="cta">
-  <a class="botao" href={href} rel={externo ? "noopener" : undefined}>{rotulo}</a>
+  {
+    app.status === "publicado" && app.links.play ? (
+      // Selo oficial (play.google.com/intl/pt-br/badges), sem alterar cor nem proporção.
+      <a class="selo-play" href={href} rel="noopener">
+        <img src="/selos/google-play-pt-br.png" alt="Disponível no Google Play" width="646" height="250" />
+      </a>
+    ) : (
+      <a class="botao" href={href} rel={externo ? "noopener" : undefined}>{rotulo}</a>
+    )
+  }
   <p class="cta-nota">{nota}</p>
 </div>
 
 <style>
+  /* A imagem tem margem transparente própria; a altura visível do selo fica perto de 48 px. */
+  .selo-play {
+    display: inline-block;
+    line-height: 0;
+  }
+
+  .selo-play img {
+    height: 72px;
+    width: auto;
+  }
+
   .cta-nota {
     margin: 10px 0 0;
     font-size: 0.92rem;
