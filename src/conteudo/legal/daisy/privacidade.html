@@ -1,5 +1,5 @@
 <h1>Política de privacidade do Daisy</h1>
-<p class="meta">Vigente desde 12 de novembro de 2026.</p>
+<p class="meta">Vigente desde 21 de novembro de 2026. Versão anterior: 12 de novembro de 2026.</p>
 
 <p>Esta política explica quais dados o aplicativo Daisy trata, para quê, com quem eles são compartilhados e como você exerce seus direitos, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018, LGPD).</p>
 
@@ -54,6 +54,12 @@
         <td>Consentimento (I)</td>
       </tr>
       <tr>
+        <td>Comprovante da compra da assinatura Premium (token do Google Play), plano e validade, ligados ao identificador anônimo</td>
+        <td>Servidores do Google (Firebase)</td>
+        <td>Validar a assinatura Premium. O pagamento é feito no Google Play; não recebemos dados do seu cartão</td>
+        <td>Execução de contrato (V)</td>
+      </tr>
+      <tr>
         <td>Sinais de integridade do app e do aparelho</td>
         <td>Firebase App Check e Play Integrity</td>
         <td>Proteger o serviço contra uso indevido e fraude</td>
@@ -68,7 +74,7 @@
 <ul>
   <li>A câmera é usada só quando você fotografa a carteirinha, a foto do pet ou um anexo.</li>
   <li>Ao fotografar a carteirinha, a foto sai do aparelho: ela vai para os nossos servidores (Cloud Functions for Firebase) e é lida pela API Gemini, do Google. O app avisa isso antes da primeira foto.</li>
-  <li>Não guardamos a foto. O app recebe a lista de registros lidos, você revisa e só o que você confirmar entra no histórico, no seu aparelho. A cópia temporária da foto no aparelho é apagada depois da leitura.</li>
+  <li>Não guardamos a foto. Pelos termos da API Gemini, o Google pode reter esse conteúdo por um período limitado só para detectar abuso, sem usá-lo para treinar modelos. O app recebe a lista de registros lidos, você revisa e só o que você confirmar entra no histórico, no seu aparelho. A cópia temporária da foto no aparelho é apagada depois da leitura.</li>
   <li>Registramos dados técnicos de cada leitura (identificador anônimo, resultado, modelo usado, tempo de resposta e volume processado), sem a foto e sem o conteúdo lido, para controle de uso e correção de erros.</li>
   <li>Fotografe só a carteirinha, sem documentos ou dados de outras pessoas.</li>
   <li>A leitura por IA pode errar. O Daisy registra o que o veterinário aplicou e a data que ele definiu; ele não sugere vacina, dose, protocolo ou diagnóstico. Siga a orientação do seu veterinário.</li>
@@ -86,7 +92,7 @@
 
 <h2>6. Com quem compartilhamos</h2>
 <ul>
-  <li><strong>Google</strong>, como operador: Firebase (autenticação anônima, Cloud Functions, Cloud Firestore para o contador de leituras, Remote Config e App Check; Analytics, Crashlytics e Performance Monitoring só se você ligar as estatísticas), API Gemini e Google Play (integridade). Esses serviços podem estar fora do Brasil (veja a seção 7).</li>
+  <li><strong>Google</strong>, como operador: Firebase (autenticação anônima, Cloud Functions, Cloud Firestore para o contador de leituras, Remote Config e App Check; Analytics, Crashlytics e Performance Monitoring só se você ligar as estatísticas), API Gemini e Google Play (integridade e assinaturas). Esses serviços podem estar fora do Brasil (veja a seção 7).</li>
   <li><strong>Quem você escolher:</strong> o histórico em PDF e os anexos só saem do app quando você os compartilha.</li>
   <li><strong>Autoridades</strong>: quando a lei ou uma ordem judicial exigir.</li>
 </ul>
@@ -101,6 +107,7 @@
   <li><strong>Contadores de leituras:</strong> o diário é apagado automaticamente depois de 2 dias; o mensal, em até 35 dias depois da última leitura.</li>
   <li><strong>Analytics:</strong> até 14 meses. <strong>Crashlytics:</strong> até 90 dias. Só existem se você ligou as estatísticas.</li>
   <li><strong>Registros técnicos dos servidores:</strong> até 30 dias.</li>
+  <li><strong>Dados da assinatura:</strong> pelo prazo exigido pela legislação fiscal e de defesa do consumidor.</li>
 </ul>
 
 <h2>9. Seus direitos</h2>
