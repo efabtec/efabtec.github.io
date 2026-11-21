@@ -42,7 +42,7 @@ npm run preview   # serve o dist/
 | Caminho | O que é |
 |---|---|
 | `src/data/apps/*.ts` | Conteúdo de cada app: textos, recursos, status, links e páginas legais. O tipo está em `src/data/tipos.ts`. |
-| `src/data/efab.ts` | Razão social, CNPJ, cidade e e-mail. |
+| `src/data/efab.ts` | Nome fantasia e e-mail (o contato público é só isso: nada de razão social, CNPJ ou dado pessoal). |
 | `src/conteudo/legal/<app>/*.html` | Texto das políticas, termos e páginas de exclusão, em HTML puro. |
 | `src/pages/` | Uma página por URL. `privacidade.astro` vira `privacidade.html` (`build.format: 'preserve'`). |
 | `src/layouts/` | `Base` (head e SEO), `Efab`, `App` e um layout por app em `apps/`, que carrega o tema e as fontes dele. |
