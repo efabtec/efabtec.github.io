@@ -16,9 +16,9 @@ export const farmacinha: App = {
     "Os remédios de casa organizados: o que você tem, onde está guardado, quando vence e o que precisa repor. A lista fica só no seu aparelho.",
   descricao:
     "Farmacinha: os remédios de casa organizados no Android, com validade, local de guarda, avisos antes de vencer e lista de reposição.",
-  // Na faixa de teste interno da Play desde 20/11/2026. Quando houver o link de opt-in, preencha links.teste.
-  status: "teste",
-  links: {},
+  // Na produção da Play desde 25/11/2026.
+  status: "publicado",
+  links: { play: "https://play.google.com/store/apps/details?id=com.efabtec.farmacinha" },
   recursos: [
     "Cadastra a caixa pelo código de barras ou pelo nome, com validade, lote, quantidade e local de guarda.",
     "Avisa quando um remédio está perto de vencer ou já venceu.",
