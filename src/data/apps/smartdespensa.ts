@@ -13,9 +13,9 @@ export const smartdespensa: App = {
     "Controle da despensa, validades, listas de compras e notas fiscais em um só lugar. O app avisa o que está perto de vencer e sugere receitas para aproveitar os itens.",
   descricao:
     "SmartDespensa: controle da despensa, validades, listas de compras e notas fiscais no Android. Avisos antes de vencer e a casa toda na mesma lista.",
-  // Em teste fechado com testadores. Quando houver o link de opt-in da Play, preencha links.teste.
-  status: "teste",
-  links: {},
+  // Na produção da Play desde 25/11/2026 (SD-131).
+  status: "publicado",
+  links: { play: "https://play.google.com/store/apps/details?id=com.smartdespensa" },
   recursos: [
     "Cadastra itens pelo código de barras ou lendo o QR Code e a foto da nota fiscal.",
     "Avisa quando um item está perto de vencer.",

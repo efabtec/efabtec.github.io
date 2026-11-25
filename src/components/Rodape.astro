@@ -25,5 +25,10 @@ import { apps } from "../data/apps";
       </nav>
     </div>
     <p class="rodape-legal">{efab.nome}</p>
+    {
+      apps.some((a) => a.status === "publicado") && (
+        <p class="rodape-legal">Google Play e o logotipo do Google Play são marcas da Google LLC.</p>
+      )
+    }
   </div>
 </footer>

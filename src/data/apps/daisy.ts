@@ -14,9 +14,9 @@ export const daisy: App = {
     "A carteirinha do pet no celular: vacinas, vermífugos, peso e remédios, com aviso antes de cada reforço. O cadastro é feito fotografando a carteirinha de papel.",
   descricao:
     "Daisy: a carteirinha do seu pet no Android, com vacinas, vermífugos, peso, remédios e aviso da próxima dose. Cadastro pela foto da carteirinha de papel.",
-  // Na faixa de teste interno da Play desde 20/11/2026. Quando houver o link de opt-in, preencha links.teste.
-  status: "teste",
-  links: {},
+  // Na produção da Play desde 25/11/2026.
+  status: "publicado",
+  links: { play: "https://play.google.com/store/apps/details?id=com.efabtec.daisy" },
   recursos: [
     "Cadastra os registros fotografando a carteirinha de papel, com revisão antes de salvar.",
     "Avisa quando a próxima dose definida pelo veterinário está chegando.",
